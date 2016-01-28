@@ -1,0 +1,19 @@
+V "GNAT Lib v2014"
+M P W=b
+P ZX
+
+RN
+RV SPARK_05
+
+U console%b		console.adb		d172b94c NE OO SU
+W p_console%s		p_console.adb		p_console.ali
+
+D console.adb		20160114120826 a0da877e console%b
+D p_console.ads		20160114120845 71a83e32 p_console%s
+D system.ads		20140406181354 f2f2d889 system%s
+X 1 console.adb
+4U11*Console 4b11 10l5 10t12
+X 2 p_console.ads
+1K9*P_Console 1|1w6 2r5 2|5e14
+3U14*Init 1|8s4
+
