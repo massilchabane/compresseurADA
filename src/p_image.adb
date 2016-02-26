@@ -37,7 +37,7 @@ package body p_image is
   begin
     image(x,y) := pixel;
   end setPixel;
-
+  
   function getHauteur(image: T_image) return natural is
   begin
     return image'length(2);

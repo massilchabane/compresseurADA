@@ -144,6 +144,65 @@ begin
 end getNombreBloc;
 
 
+procedure dct(bloc: in out T_Bloc) is
+begin
+  for i in bloc'range loop
+    dct(bloc(i).all);
+  end loop;
+end dct;
+
+procedure dct(image: in out P_Image_YCbCr.T_Image) is
+begin
+  for i in image'range(1) loop
+    for j in image'range(2) loop
+      dct(image, image(i,j), i , j);
+    end loop;
+  end loop;
+end dct;
+
+procedure dct(image: in out P_Image_YCbCr.T_Image; pixel: in out P_Image_YCbCr.T_Pixel; i : natural; j : natural) is
+begin
+  pixel.Y := dct_Y(image, pixel, i, j);
+  pixel.Cb := dct_Cb(image, pixel, i, j);
+  pixel.Cr := dct_Cr(image, pixel, i, j);
+end dct;
+
+function dct_Y(image: in out P_Image_YCbCr.T_Image; pixel: in out P_Image_YCbCr.T_Pixel; i : natural; j : natural) return float is
+  resultat : float := 0.0;
+begin
+  for x in image'range(1) loop
+    for y in image'range(2) loop
+      resultat := resultat + P_Image_YCbCr.getPixel(image, x, y).Y * Ada.Numerics.Elementary_Functions.cos(float(2*x+1) * float(i)  * Ada.Numerics.Pi / float(2 *image'length)) * Ada.Numerics.Elementary_Functions.cos(float(2*y+1) * float(j)  * Ada.Numerics.Pi / float(2 *image'length));
+    end loop;
+  end loop;
+  resultat := resultat * C(i) * C(j) * 2.0/float(image'length);
+  return resultat;
+end dct_Y;
+
+function dct_Cb(image: in out P_Image_YCbCr.T_Image; pixel: in out P_Image_YCbCr.T_Pixel; i : natural; j : natural) return float is
+  resultat : float := 0.0;
+begin
+  for x in image'range(1) loop
+    for y in image'range(2) loop
+      resultat := resultat + P_Image_YCbCr.getPixel(image, x, y).Cb * Ada.Numerics.Elementary_Functions.cos(float(2*x+1) * float(i)  * Ada.Numerics.Pi / float(2 *image'length)) * Ada.Numerics.Elementary_Functions.cos(float(2*y+1) * float(j)  * Ada.Numerics.Pi / float(2 *image'length));
+    end loop;
+  end loop;
+  resultat := resultat * C(i) * C(j) * 2.0/float(image'length);
+  return resultat;
+end dct_Cb;
+
+function dct_Cr(image: in out P_Image_YCbCr.T_Image; pixel: in out P_Image_YCbCr.T_Pixel; i : natural; j : natural) return float is
+  resultat : float := 0.0;
+begin
+  for x in image'range(1) loop
+    for y in image'range(2) loop
+      resultat := resultat + P_Image_YCbCr.getPixel(image, x, y).Cr * Ada.Numerics.Elementary_Functions.cos(float(2*x+1) * float(i)  * Ada.Numerics.Pi / float(2 *image'length)) * Ada.Numerics.Elementary_Functions.cos(float(2*y+1) * float(j)  * Ada.Numerics.Pi / float(2 *image'length));
+    end loop;
+  end loop;
+  resultat := resultat * C(i) * C(j) * 2.0/float(image'length);
+  return resultat;
+end dct_Cr;
+
 function c(x:Natural) return float is
 begin
   if x = 0 then
@@ -152,6 +211,8 @@ begin
     return 1.0;
   end if;
 end c;
+
+
 
 
 end p_compression;

@@ -7,7 +7,7 @@ RV NO_SECONDARY_STACK
 RV NO_STANDARD_STORAGE_POOLS
 RV SPARK_05
 
-U sc_compression%b	sc_compression.adb	e9fc501c NE OO SU IL
+U sc_compression%b	sc_compression.adb	1922f5e4 NE OO SU IL
 W ada.tags%s		a-tags.adb		a-tags.ali
 W p_compression%s	p_compression.adb	p_compression.ali
 W p_image%s		p_image.adb		p_image.ali
@@ -30,8 +30,8 @@ D a-tiinio.ads		20140406181359 aa04e5d6 ada.text_io.integer_io%s
 D a-unccon.ads		20140406181359 f9eb8f06 ada.unchecked_conversion%s
 D interfac.ads		20140406181359 69adb1b9 interfaces%s
 D i-cstrea.ads		20140406181357 febc86ed interfaces.c_streams%s
-D p_compression.ads	20160226095731 499835ec p_compression%s
-D p_image.ads		20160225153921 5ec950a6 p_image%s
+D p_compression.ads	20160226154220 b9469014 p_compression%s
+D p_image.ads		20160226104421 5ec950a6 p_image%s
 D p_image_ycbcr.ads	20160225205758 873768e5 p_image_ycbcr%s
 D sc_compression.adb	20160226093735 fead3556 sc_compression%b
 D system.ads		20140406181354 f2f2d889 system%s
@@ -53,13 +53,13 @@ D s-traent.ads		20140406181355 b5116092 system.traceback_entries%s
 D s-unstyp.ads		20140406181356 510692af system.unsigned_types%s
 D s-wchcon.ads		20140406181358 1b7d22d2 system.wch_con%s
 X 18 p_compression.ads
-3K9*p_compression 24e18 21|1w15 2r14
-5V10*compression{19|18A6} 21|7s12
+3K9*p_compression 28e18 21|1w15 2r14
+5V10*compression{19|17A6} 21|7s12
 X 19 p_image.ads
-4K9*P_Image 32e12 21|1w6 2r5
-18A6*T_image(8R6)<integer><integer> 21|5r11
-20V10*init{18A6} 21|5s22
+4K9*P_Image 31e12 21|1w6 2r5
+17A6*T_image(8R6)<integer><integer> 21|5r11
+19V10*init{17A6} 21|5s22
 X 21 sc_compression.adb
 4U11*sc_compression 4b11 8l5 8t19
-5a3 image{19|18A6} 7r3 7r24
+5a3 image{19|17A6} 7r3 7r24
 

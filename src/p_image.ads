@@ -14,7 +14,6 @@ end record;
 black_pixel : constant T_pixel := (0,0,0);
 white_pixel : constant T_pixel := (255, 255, 255);
 
-
 type T_image is array (natural range <>, natural range <>) of T_pixel;
 
 function init(largeur:Natural; hauteur:Natural; default:T_Pixel := white_pixel) return T_image;
