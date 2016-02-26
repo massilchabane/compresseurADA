@@ -22,8 +22,8 @@ package body p_image is
       end loop;
     end afficher;
 
-  function init(x:Natural; y:Natural; default:T_Pixel := white_pixel) return T_image is
-    image : T_image(0..x,0..y) := (others =>(others=>default));
+  function init(largeur:Natural; hauteur:Natural; default:T_Pixel := white_pixel) return T_image is
+    image : T_image(0..largeur-1,0..hauteur-1) := (others =>(others=>default));
   begin
     return image;
   end init;
@@ -37,5 +37,14 @@ package body p_image is
   begin
     image(x,y) := pixel;
   end setPixel;
+
+  function getHauteur(image: T_image) return natural is
+  begin
+    return image'length(2);
+  end getHauteur;
+  function getLargeur(image: T_image) return natural is
+  begin
+    return image'length(1);
+  end getLargeur;
 
 end p_image;

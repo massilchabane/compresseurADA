@@ -17,11 +17,15 @@ white_pixel : constant T_pixel := (255, 255, 255);
 
 type T_image is array (natural range <>, natural range <>) of T_pixel;
 
-function init(x:Natural; y:Natural; default:T_Pixel := white_pixel) return T_image;
+function init(largeur:Natural; hauteur:Natural; default:T_Pixel := white_pixel) return T_image;
 
 function getPixel(image: T_image; x:Natural; y: Natural) return T_pixel;
 
 procedure setPixel(image: in out T_image; x: in Natural; y: in Natural; pixel: in T_pixel);
+
+
+function getHauteur(image: T_image) return natural;
+function getLargeur(image: T_image) return natural;
 
 procedure afficher(image: T_image);
 procedure afficher(pixel: T_pixel);

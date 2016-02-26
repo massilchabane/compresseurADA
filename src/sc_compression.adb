@@ -1,8 +1,8 @@
-with P_image;
-use P_image;
+with P_image, p_compression;
+use P_image, p_compression;
 
 procedure sc_compression is
-  image : T_image := init(4,4);
+  image : T_image := init(9,9);
 begin
-  afficher(image);
+  image := compression(image, 2);
 end sc_compression;
