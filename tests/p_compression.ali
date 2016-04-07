@@ -1,0 +1,314 @@
+V "GNAT Lib v2014"
+P SS ZX
+
+RN
+RV NO_ACCESS_SUBPROGRAMS
+RV NO_FLOATING_POINT
+RV NO_IO
+RV NO_SECONDARY_STACK
+RV NO_DEFAULT_INITIALIZATION
+RV NO_ELABORATION_CODE
+RV SPARK_05
+
+U p_compression%b	p_compression.adb	7f0b1a9f NE OO PK IL
+W ada.tags%s		a-tags.adb		a-tags.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+U p_compression%s	p_compression.ads	9d7641b0 EE OO PF PK IL
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.elementary_functions%s  a-nuelfu.ads  a-nuelfu.ali
+W ada.streams%s		a-stream.adb		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W interfaces%s		interfac.ads		interfac.ali
+W p_blocks%s		p_blocks.adb		p_blocks.ali  AD
+W p_image%s		p_image.adb		p_image.ali  AD
+W p_pixel%s		p_pixel.ads		p_pixel.ali
+W p_pixel.rgb%s		p_pixel-rgb.adb		p_pixel-rgb.ali  AD
+W p_pixel.ycbcr%s	p_pixel-ycbcr.adb	p_pixel-ycbcr.ali  AD
+W system%s		system.ads		system.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.img_real%s	s-imgrea.adb		s-imgrea.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+
+D ada.ads		20140406181354 3ffc8e18 ada%s
+D a-except.ads		20140406181356 43d57f8c ada.exceptions%s
+D a-finali.ads		20140406181359 69f99942 ada.finalization%s
+D a-inteio.ads		20140406181359 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20140406181358 e4a01f64 ada.io_exceptions%s
+D a-numeri.ads		20140406181358 bb51c45a ada.numerics%s
+D a-nuelfu.ads		20140406181356 03e83d1c ada.numerics.elementary_functions%s
+D a-ngelfu.ads		20140406181358 ff061ca9 ada.numerics.generic_elementary_functions%s
+D a-stream.ads		20140406181355 1a984740 ada.streams%s
+D a-tags.ads		20140406181357 dc4d0634 ada.tags%s
+D a-textio.ads		20140406181359 386df5d4 ada.text_io%s
+D a-tiinio.ads		20140406181359 aa04e5d6 ada.text_io.integer_io%s
+D a-unccon.ads		20140406181359 f9eb8f06 ada.unchecked_conversion%s
+D interfac.ads		20140406181359 69adb1b9 interfaces%s
+D i-cstrea.ads		20140406181357 febc86ed interfaces.c_streams%s
+D p_blocks.ads		20160402132735 a01f1a55 p_blocks%s
+D p_blocks.adb		20160402195336 4ae498bc p_blocks%b
+D p_compression.ads	20160403180208 5b861674 p_compression%s
+D p_compression.adb	20160403181841 248d0ceb p_compression%b
+D p_image.ads		20160402105731 40e9b6ec p_image%s
+D p_image.adb		20160402105744 f4ba24d5 p_image%b
+D p_pixel.ads		20160331173639 444a32ed p_pixel%s
+D p_pixel-rgb.ads	20160331214913 f1cf9ef6 p_pixel.rgb%s
+D p_pixel-rgb.adb	20160331215028 0952adf8 p_pixel.rgb%b
+D p_pixel-ycbcr.ads	20160331214922 a156e0bd p_pixel.ycbcr%s
+D p_pixel-ycbcr.adb	20160403171754 b270e71f p_pixel.ycbcr%b
+D system.ads		20140406181354 f2f2d889 system%s
+D s-crtl.ads		20140406181356 2c012597 system.crtl%s
+D s-exctab.ads		20140406181354 54135002 system.exception_table%s
+D s-ficobl.ads		20140406181355 078245e4 system.file_control_block%s
+D s-finmas.ads		20140406181356 814daec4 system.finalization_masters%s
+D s-finroo.ads		20140406181359 4ff27390 system.finalization_root%s
+D s-imgrea.ads		20140406181357 c7a851e2 system.img_real%s
+D s-parame.ads		20140406181358 06da98b2 system.parameters%s
+D s-pooglo.ads		20140406181357 542f33d0 system.pool_global%s
+D s-secsta.ads		20140406181359 86a2856d system.secondary_stack%s
+D s-soflin.ads		20140406181358 aa763b52 system.soft_links%s
+D s-stache.ads		20140406181355 a37c21ec system.stack_checking%s
+D s-stalib.ads		20140406181355 fa0a3617 system.standard_library%s
+D s-stoele.ads		20140406181357 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20140406181355 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20140406181357 b16154c2 system.storage_pools%s
+D s-stratt.ads		20140406181358 aedef97e system.stream_attributes%s
+D s-traent.ads		20140406181355 b5116092 system.traceback_entries%s
+D s-unstyp.ads		20140406181356 510692af system.unsigned_types%s
+D s-wchcon.ads		20140406181358 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 19e8 18|1r53 1r66 1r87 1r100 2r5 2r18 19|122r18 130r12 130r87
+X 4 a-inteio.ads
+18K13*Integer_Text_IO[12|46] 18|1w70 2r22
+X 6 a-numeri.ads
+16K13*Numerics 32e17 18|1w91 1r104 19|122r22 130r16 130r91
+21N4*Pi 19|130r100
+X 7 a-nuelfu.ads
+18K22*Elementary_Functions[8|39] 18|1w113 19|122r31 130r25
+X 8 a-ngelfu.ads
+42V13*Sqrt{float} 19|122s52[7|18]
+72V13*Cos{float} 19|130s46[7|18]
+X 11 a-textio.ads
+49K13*Text_IO 471e16 18|1w57 2r9
+166U14*New_Line 19|15s5 19s5 22s5 25s5 30s5 35s5 37s5 42s5 44s5
+242U14*Put 19|16s5 18s5 23s5 32s5 34s5 39s5 41s5
+263U14*Put_Line 19|27s5
+X 12 a-tiinio.ads
+66U14*Put 19|24s5[4|18] 50s5[4|18]
+X 16 p_blocks.ads
+12k9*P_Blocks 36e13 18|1w43 20r31 22r33
+13A8*T_Blocks
+14P8*A_Blocks(13A8[18|22]) 18|31r44[22] 44r55[22] 19|10r29[18|22] 90r44[18|22]
+. 212r55[18|22]
+16V12*getAmountOfBlocks{natural} 19|24s24[18|22]
+17V12*cutInBlocks{14P8[18|22]} 19|28s30[18|22]
+20U13*afficher 19|29s20[18|22] 36s20[18|22] 43s20[18|22]
+23V12*getHeight{natural} 19|93s34[18|22] 215s34[18|22]
+26V12*getWidth{natural} 19|92s32[18|22] 214s32[18|22]
+29V12*getImage{20|10P8[18|19]} 19|94s66[18|22] 216s39[18|22]
+32U13*setImage 19|94s24[18|22]
+X 18 p_compression.ads
+4K9*p_compression 27E12 52l5 52e18 19|1b14 264l5 264t18
+5i3*Taille_Bloc{natural} 20r96 22r168 19|175r27 194r27 199r59 199r72 202r18
+. 203r21
+6I8*T_255<integer> 8r27 9r23 13r36 15r40 19|48r27 53r23 84r22 85r24 86r23
+8U13*afficher 8>22 13r43 19|48b13 51l7 51t15
+8i22 pxl{6I8} 19|48b22 50r17
+9V12*toFloat{float} 9>20 15r47 19|53b12 56l7 56t14
+9i20 p{6I8} 19|53b20
+13K11*P_RGB[23|8] 14r7 17r51
+15K11*P_YCbCr[25|8] 16r7 19r55 39r50 19|112r51 136r36 138r44 145r36 147r44
+. 154r36 156r44 205r47
+17K11*p_image_rgb[20|8] 18r7
+19K11*p_image_YCbCr[20|8] 22r42 22r65 22r90 22r114 22r144 29r52 32r24 32r70
+. 33r34 33r79 35r25 36r26 37r26 40r28 41r36 43r45 45r39 46r39 47r41 48r42
+. 49r42 50r35 19|11r18 20r5 69r52 70r23 70r48 74r9 99r24 99r70 100r23 100r48
+. 100r67 100r98 102r17 103r19 110r34 110r77 112r5 133r25 142r26 151r26 160r28
+. 165r20 169r20 179r36 184r20 188r30 198r45 199r15 199r40 205r9 221r39 223r17
+. 224r19 230r39 239r41 244r42 249r42 254r35 255r30 256r22 257r22
+20K11*p_blocks_rgb[16|12] 21r7
+22K11*p_blocks_YCbCr[16|12] 31r29 44r40 19|10r14 24r9 28r15 29r5 36r5 43r5
+. 90r29 92r17 93r19 94r9 94r51 212r40 214r17 215r19 216r24
+24U13*compression 24>25 19|9b13 46l7 46t18
+24p25 image{20|10P8[17]} 19|9b25 13r14 17r36
+27V12 convert_to_rgb{23|9R8[13]} 27>27 19|81b12 88l7 88t21
+27r27 pixel{25|9R8[15]} 19|81b27 84r33 84r55 85r35 85r59 85r92 86r34 86r56
+28V12 convert_to_YCbCr{25|9R8[15]} 28>29 19|60b12 67l7 67t23 74s55
+28r29 pixel{23|9R8[13]} 19|60b29 63r44 63r77 63r109 64r47 64r81 64r111 65r43
+. 65r77 65r110
+29V12 convert_to_YCbCr{20|10P8[19]} 29>29 19|17s19 69b12 78l7 78t23
+29p29 image{20|10P8[17]} 19|69b29 70r76 70r93 72r26 73r29 74r81
+31U13 dct 31>17 31>54 19|33s5 40s5 90b13 97l7 97t10
+31p17 blocks{16|14P8[22]} 19|90b17 92r41 93r44 94r33 94r75
+31b54 mode{boolean} 19|90b54 94r90
+32V12 dct{20|10P8[19]} 32>16 32>47 19|94s47 99b12 108l7 108t10
+32p16 image{20|10P8[19]} 19|99b16 100r90 100r122 102r40 103r43 104r13
+32b47 mode{boolean} 19|99b47 104r43
+33U13 dct 33>17 33>57 33>102 33>118 33>134 19|104s9 110b13 117l7 117t10
+33p17 image_source{20|10P8[19]} 19|110b17 113r13 114r14 115r14
+33p57 converted_image{20|10P8[19]} 19|110b57 112r28
+33i102 i{natural} 19|110b100 112r45 113r27 114r28 115r28
+33i118 j{natural} 19|110b116 112r48 113r30 114r31 115r31
+33b134 mode{boolean} 19|110b132 113r33 114r34 115r34
+35V12 dct_Y{float} 35>18 35>48 35>61 35>74 19|113s7 133b12 140l7 140t12
+35p18 image{20|10P8[19]} 19|133b18 136r23 138r31
+35i48 i{natural} 19|133b48 136r30 138r38
+35i61 j{natural} 19|133b61 136r33 138r41
+35b74 mode{boolean} 19|133b74 135r8
+36V12 dct_Cb{float} 36>19 36>49 36>62 36>75 19|114s7 142b12 149l7 149t13
+36p19 image{20|10P8[19]} 19|142b19 145r23 147r31
+36i49 i{natural} 19|142b49 145r30 147r38
+36i62 j{natural} 19|142b62 145r33 147r41
+36b75 mode{boolean} 19|142b75 144r8
+37V12 dct_Cr{float} 37>19 37>49 37>62 37>75 19|115s7 151b12 158l7 158t13
+37p19 image{20|10P8[19]} 19|151b19 154r23 156r31
+37i49 i{natural} 19|151b49 154r30 156r38
+37i62 j{natural} 19|151b62 154r33 156r41
+37b75 mode{boolean} 19|151b75 153r8
+39P8 Proc_Access_T(float) 39>42 40r83 41r91 50r90 19|160r83 179r91 254r90
+39r42 pixel{25|9R8[15]}
+40V12 dct_Calc{float} 40>21 40>51 40>64 40>77 19|136s14 145s14 154s14 160b12
+. 177l7 177t15
+40p21 image{20|10P8[19]} 19|160b21 165r43 169r43
+40i51 i{natural} 19|160b51 169r70 175r43
+40i64 j{natural} 19|160b64 169r88 175r48
+40p77 get{39P8} 19|160b77 169r16
+41V12 dct_Calc_inverse{float} 41>29 41>59 41>72 41>85 19|138s14 147s14 156s14
+. 179b12 196l7 196t23
+41p29 image{20|10P8[19]} 19|179b29 184r43 188r53
+41i59 x{natural} 19|179b59 188r77
+41i72 y{natural} 19|179b72 188r96
+41p85 get{39P8} 19|179b85 188r26
+43V12 matrice_de_quantification{20|10P8[19]} 19|198b12 209l7 209t32 255s55
+44U13 quantification 44>28 44>65 19|212b13 219l7 219t21
+44p28 blocks{16|14P8[22]} 19|212b28 214r41 215r44 216r48
+44b65 mode{boolean} 19|212b65 216r63
+45U13 quantification 45>28 45>62 19|216s9 221b13 228l7 228t21
+45p28 image{20|10P8[19]} 19|221b28 223r40 224r43 225r24
+45b62 mode{boolean} 19|221b62 225r37
+46U13 quantification 46>28 46>62 46>75 46>88 19|225s9 230b13 235l7 235t21
+46p28 image{20|10P8[19]} 19|230b28 232r22 233r23 234r23
+46i62 x{natural} 19|230b62 232r29 233r30 234r30
+46i75 y{natural} 19|230b75 232r32 233r33 234r33
+46b88 mode{boolean} 19|230b88 232r35 233r36 234r36
+47U13 quantification_y 47>30 47>64 47>77 47>90 19|232s5 239b13 242l7 242t23
+47p30 image{20|10P8[19]} 19|239b30
+47i64 x{natural} 19|239b64
+47i77 y{natural} 19|239b77
+47b90 mode{boolean} 19|239b90
+48U13 quantification_cb 48>31 48>65 48>78 48>91 19|233s5 244b13 247l7 247t24
+48p31 image{20|10P8[19]} 19|244b31
+48i65 x{natural} 19|244b65
+48i78 y{natural} 19|244b78
+48b91 mode{boolean} 19|244b91
+49U13 quantification_cr 49>31 49>65 49>78 49>91 19|234s5 249b13 252l7 252t24
+49p31 image{20|10P8[19]} 19|249b31
+49i65 x{natural} 19|249b65
+49i78 y{natural} 19|249b78
+49b91 mode{boolean} 19|249b91
+50V12 quantification{float} 50>27 50>58 50>71 50>84 50>105 19|254b12 260l7
+. 260t21
+50p27 image{20|10P8[19]} 19|254b27 256r45
+50i58 x{natural} 19|254b58 256r52 257r69
+50i71 y{natural} 19|254b71 256r55 257r72
+50p84 get{39P8} 19|254b84 256r18 257r18
+50b105 mode{boolean} 19|254b105
+X 19 p_compression.adb
+10p5 blocks{16|14P8[18|22]} 28m5 29r29 33r9 36r29 40r9 43r29
+11p5 work_image{20|10P8[18|19]} 17m5 20r28 24r42 28r42
+61r5 pixel_YCbCr{25|9R8[18|15]} 63m10 64m11 65m11 66r12
+70p5 converted_image{20|10P8[18|19]} 74r32 77r12
+72i9 x{integer} 74r49 74r88
+73i11 y{integer} 74r52 74r91
+82r5 pixel_rgb{23|9R8[18|13]} 84m12 85m14 86m13 87r12
+92i9 x{integer} 94r41 94r83
+93i11 y{integer} 94r44 94r86
+100p5 converted_image{20|10P8[18|19]} 104r20 107r12
+102i9 x{integer} 104r37
+103i11 y{integer} 104r40
+119V12 c{float} 119b12 119>14 126l7 126t8 175s41 175s46 188s16 188s21
+119i14 x{natural} 121r8
+128V12 dct_cos{float} 128b12 128>20 128>33 128>45 131l7 131t14 169s59 169s78
+. 188s69 188s88
+128i20 a{natural} 130r64
+128i33 b{natural} 130r82
+128i45 N{natural} 130r120
+161f5 value{float} 175m5 176r12
+162f5 s1{float} 170m9 170r15 172r18 173m7
+163f5 s2{float} 172m7 172r13 175r51
+164f5 tmp{float} 169m9 170r20
+165i5 N{natural} 167r17 168r19 169r73 169r91
+167i9 x{integer} 169r50 169r67
+168i11 y{integer} 169r53 169r86
+180f5 value{float} 194m5 195r12
+181f5 s1{float} 189m9 189r15 191r18 192m7
+182f5 s2{float} 191m7 191r13 194r41
+183f5 tmp{float} 188m9 189r20
+184i5 N{natural} 186r17 187r19 188r83 188r101
+186i9 i{integer} 188r18 188r60 188r80
+187i11 j{integer} 188r23 188r63 188r98
+199p5 matrice{20|10P8[18|19]} 205r32 208r12
+200f5 value{float} 204m9 205r60 205r67 205r74
+202i9 x{integer} 204r31 205r41
+203i11 y{integer} 204r42 205r44
+214i9 x{integer} 216r56
+215i11 y{integer} 216r59
+223i9 x{integer} 225r31
+224i11 y{integer} 225r34
+255p5 matrice_quantification{20|10P8[18|19]} 257r45
+256f5 P{float} 259r13
+257f5 q{float} 259r31 259r42
+X 20 p_image.ads
+8k9*P_Image 18|1w6 17r30 19r32 20|31e12
+9A8*T_Image
+10P8*A_image(9A8[18|17]) 18|20r40[17] 22r56[19] 24r33[17] 29r36[17] 29r66[19]
+. 32r38[19] 32r84[19] 33r48[19] 33r93[19] 35r39[19] 36r40[19] 37r40[19] 40r42[19]
+. 41r50[19] 43r59[19] 45r53[19] 46r53[19] 47r55[19] 48r56[19] 49r56[19] 50r49[19]
+. 19|9r33[18|17] 11r32[18|19] 69r36[18|17] 69r66[18|19] 70r37[18|19] 99r38[18|19]
+. 99r84[18|19] 100r37[18|19] 110r48[18|19] 110r91[18|19] 133r39[18|19] 142r40[18|19]
+. 151r40[18|19] 160r42[18|19] 179r50[18|19] 198r59[18|19] 199r29[18|19] 221r53[18|19]
+. 230r53[18|19] 239r55[18|19] 244r56[18|19] 249r56[18|19] 254r49[18|19] 255r44[18|19]
+13V12*getHeight{natural} 18|20r49[17] 22r79[19] 19|70s83[18|17] 73s19[18|17]
+. 100s112[18|19] 103s33[18|19] 224s33[18|19]
+14V12*getWidth{natural} 18|20r60[17] 22r104[19] 19|70s67[18|17] 72s17[18|17]
+. 100s81[18|19] 102s31[18|19] 165s34[18|19] 184s34[18|19] 223s31[18|19]
+15V12*getPartOfImage{10P8[18|17]} 18|20r70[17] 22r128[19]
+18V12*getPixel{23|9R8[18|13]} 19|74s72[18|17] 169s34[18|19] 188s44[18|19]
+. 256s36[18|19] 257s36[18|19]
+21U13*setPixel 19|74s23[18|19] 112s19[18|19] 205s23[18|19]
+23V12*init{10P8[18|19]} 19|70s62[18|19] 100s62[18|19] 199s54[18|19]
+27U13*afficher 18|20r86[17] 22r158[19] 19|13s5[18|17] 20s19[18|19]
+X 22 p_pixel.ads
+1K9*p_pixel 18|1r15 1r28 13r24 15r26 22|11e12
+X 23 p_pixel-rgb.ads
+8k17*rgb 18|1w23 13r32 23|32e16
+9R8*T_Pixel_RGB<22|2R8> 18|17r38[13] 27r56[13] 28r36[13] 19|60r36[18|13]
+. 81r56[18|13] 82r17[18|13]
+14V12*getRed{18|6I8} 19|63s37[18|13] 64s40[18|13] 65s36[18|13]
+15V12*getGreen{18|6I8} 19|63s68[18|13] 64s72[18|13] 65s68[18|13]
+16V12*getBlue{18|6I8} 19|63s101[18|13] 64s103[18|13] 65s102[18|13]
+18U13*setRed 19|84s5[18|13]
+19U13*setGreen 19|85s5[18|13]
+20U13*setBlue 19|86s5[18|13]
+22U13*afficher 18|17r57[13]
+X 25 p_pixel-ycbcr.ads
+8k17*YCbCr 18|1w36 15r34 25|32e18
+9R8*T_Pixel_YCbCr<22|2R8> 18|19r40[15] 27r34[15] 28r56[15] 39r58[15] 19|60r56[18|15]
+. 61r19[18|15] 81r34[18|15]
+12V12*init{9R8[18|15]} 19|112s59[18|15] 205s55[18|15]
+14V12*getY{float} 19|84s28[18|15] 85s30[18|15] 86s29[18|15] 136r44[18|15]
+. 138r52[18|15]
+15V12*getCb{float} 19|85s53[18|15] 86s50[18|15] 145r44[18|15] 147r52[18|15]
+16V12*getCr{float} 19|84s49[18|15] 85s86[18|15] 154r44[18|15] 156r52[18|15]
+18U13*setY 19|63s5[18|15]
+19U13*setCb 19|64s5[18|15]
+20U13*setCr 19|65s5[18|15]
+22U13*afficher 18|19r63[15]
+

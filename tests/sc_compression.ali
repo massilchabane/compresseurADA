@@ -1,0 +1,114 @@
+V "GNAT Lib v2014"
+M P W=b
+P SS ZX
+
+RN
+RV NO_IO
+RV NO_SECONDARY_STACK
+RV SPARK_05
+
+U sc_compression%b	sc_compression.adb	761d5d73 NE OO SU IL
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W p_compression%s	p_compression.adb	p_compression.ali
+W p_image%s		p_image.adb		p_image.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+D ada.ads		20140406181354 3ffc8e18 ada%s
+D a-except.ads		20140406181356 43d57f8c ada.exceptions%s
+D a-finali.ads		20140406181359 69f99942 ada.finalization%s
+D a-inteio.ads		20140406181359 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20140406181358 e4a01f64 ada.io_exceptions%s
+D a-numeri.ads		20140406181358 bb51c45a ada.numerics%s
+D a-nuelfu.ads		20140406181356 03e83d1c ada.numerics.elementary_functions%s
+D a-ngelfu.ads		20140406181358 ff061ca9 ada.numerics.generic_elementary_functions%s
+D a-stream.ads		20140406181355 1a984740 ada.streams%s
+D a-tags.ads		20140406181357 dc4d0634 ada.tags%s
+D a-textio.ads		20140406181359 386df5d4 ada.text_io%s
+D a-tiinio.ads		20140406181359 aa04e5d6 ada.text_io.integer_io%s
+D a-unccon.ads		20140406181359 f9eb8f06 ada.unchecked_conversion%s
+D interfac.ads		20140406181359 69adb1b9 interfaces%s
+D i-cstrea.ads		20140406181357 febc86ed interfaces.c_streams%s
+D p_blocks.ads		20160402132735 a01f1a55 p_blocks%s
+D p_compression.ads	20160403180208 5b861674 p_compression%s
+D p_image.ads		20160402105731 40e9b6ec p_image%s
+D p_image.adb		20160402105744 f4ba24d5 p_image%b
+D p_pixel.ads		20160331173639 444a32ed p_pixel%s
+D p_pixel-rgb.ads	20160331214913 f1cf9ef6 p_pixel.rgb%s
+D p_pixel-ycbcr.ads	20160331214922 a156e0bd p_pixel.ycbcr%s
+D sc_compression.adb	20160331211317 551f083f sc_compression%b
+D system.ads		20140406181354 f2f2d889 system%s
+D s-crtl.ads		20140406181356 2c012597 system.crtl%s
+D s-exctab.ads		20140406181354 54135002 system.exception_table%s
+D s-ficobl.ads		20140406181355 078245e4 system.file_control_block%s
+D s-finmas.ads		20140406181356 814daec4 system.finalization_masters%s
+D s-finroo.ads		20140406181359 4ff27390 system.finalization_root%s
+D s-parame.ads		20140406181358 06da98b2 system.parameters%s
+D s-pooglo.ads		20140406181357 542f33d0 system.pool_global%s
+D s-secsta.ads		20140406181359 86a2856d system.secondary_stack%s
+D s-soflin.ads		20140406181358 aa763b52 system.soft_links%s
+D s-stache.ads		20140406181355 a37c21ec system.stack_checking%s
+D s-stalib.ads		20140406181355 fa0a3617 system.standard_library%s
+D s-stoele.ads		20140406181357 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20140406181355 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20140406181357 b16154c2 system.storage_pools%s
+D s-stratt.ads		20140406181358 aedef97e system.stream_attributes%s
+D s-traent.ads		20140406181355 b5116092 system.traceback_entries%s
+D s-unstyp.ads		20140406181356 510692af system.unsigned_types%s
+D s-wchcon.ads		20140406181358 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 19e8 23|1r30 2r20
+X 11 a-textio.ads
+49K13*Text_IO 471e16 23|1w34 2r24
+X 17 p_compression.ads
+4K9*p_compression 52e18 23|1w6 2r5
+13K11*P_RGB[21|8] 23|7r39 8r39 9r39 10r39 11r39 12r39 13r39 14r39 15r39 16r39
+. 17r39 18r39 19r39 20r39 21r39 22r39 23r39 24r39 25r39 26r39 27r39 28r39
+. 29r39 30r39 31r39 32r39 33r39 34r39 35r39 36r39 37r39 38r39 39r39 40r39
+. 41r39 42r39 43r39 44r39 45r39 46r39 47r39 48r39 49r39 50r39 51r39 52r39
+. 53r39 54r39 55r39 56r39 57r39 58r39 59r39 60r39 61r39 62r39 63r39 64r39
+. 65r39 66r39 67r39 68r39 69r39 70r39
+17K11*p_image_rgb[18|8] 23|5r11 5r34 7r3 8r3 9r3 10r3 11r3 12r3 13r3 14r3
+. 15r3 16r3 17r3 18r3 19r3 20r3 21r3 22r3 23r3 24r3 25r3 26r3 27r3 28r3 29r3
+. 30r3 31r3 32r3 33r3 34r3 35r3 36r3 37r3 38r3 39r3 40r3 41r3 42r3 43r3 44r3
+. 45r3 46r3 47r3 48r3 49r3 50r3 51r3 52r3 53r3 54r3 55r3 56r3 57r3 58r3 59r3
+. 60r3 61r3 62r3 63r3 64r3 65r3 66r3 67r3 68r3 69r3 70r3
+24U13*compression 23|73s3
+X 18 p_image.ads
+8k9*P_Image 31e12 23|1w21
+9A8*T_Image
+10P8*A_image(9A8[17|17]) 23|5r23[17|17]
+21U13*setPixel 23|7s15[17|17] 8s15[17|17] 9s15[17|17] 10s15[17|17] 11s15[17|17]
+. 12s15[17|17] 13s15[17|17] 14s15[17|17] 15s15[17|17] 16s15[17|17] 17s15[17|17]
+. 18s15[17|17] 19s15[17|17] 20s15[17|17] 21s15[17|17] 22s15[17|17] 23s15[17|17]
+. 24s15[17|17] 25s15[17|17] 26s15[17|17] 27s15[17|17] 28s15[17|17] 29s15[17|17]
+. 30s15[17|17] 31s15[17|17] 32s15[17|17] 33s15[17|17] 34s15[17|17] 35s15[17|17]
+. 36s15[17|17] 37s15[17|17] 38s15[17|17] 39s15[17|17] 40s15[17|17] 41s15[17|17]
+. 42s15[17|17] 43s15[17|17] 44s15[17|17] 45s15[17|17] 46s15[17|17] 47s15[17|17]
+. 48s15[17|17] 49s15[17|17] 50s15[17|17] 51s15[17|17] 52s15[17|17] 53s15[17|17]
+. 54s15[17|17] 55s15[17|17] 56s15[17|17] 57s15[17|17] 58s15[17|17] 59s15[17|17]
+. 60s15[17|17] 61s15[17|17] 62s15[17|17] 63s15[17|17] 64s15[17|17] 65s15[17|17]
+. 66s15[17|17] 67s15[17|17] 68s15[17|17] 69s15[17|17] 70s15[17|17]
+23V12*init{10P8[17|17]} 23|5s46[17|17]
+X 21 p_pixel-rgb.ads
+9R8*T_Pixel_RGB<20|2R8>
+12V12*init{9R8[17|13]} 23|7s45[17|13] 8s45[17|13] 9s45[17|13] 10s45[17|13]
+. 11s45[17|13] 12s45[17|13] 13s45[17|13] 14s45[17|13] 15s45[17|13] 16s45[17|13]
+. 17s45[17|13] 18s45[17|13] 19s45[17|13] 20s45[17|13] 21s45[17|13] 22s45[17|13]
+. 23s45[17|13] 24s45[17|13] 25s45[17|13] 26s45[17|13] 27s45[17|13] 28s45[17|13]
+. 29s45[17|13] 30s45[17|13] 31s45[17|13] 32s45[17|13] 33s45[17|13] 34s45[17|13]
+. 35s45[17|13] 36s45[17|13] 37s45[17|13] 38s45[17|13] 39s45[17|13] 40s45[17|13]
+. 41s45[17|13] 42s45[17|13] 43s45[17|13] 44s45[17|13] 45s45[17|13] 46s45[17|13]
+. 47s45[17|13] 48s45[17|13] 49s45[17|13] 50s45[17|13] 51s45[17|13] 52s45[17|13]
+. 53s45[17|13] 54s45[17|13] 55s45[17|13] 56s45[17|13] 57s45[17|13] 58s45[17|13]
+. 59s45[17|13] 60s45[17|13] 61s45[17|13] 62s45[17|13] 63s45[17|13] 64s45[17|13]
+. 65s45[17|13] 66s45[17|13] 67s45[17|13] 68s45[17|13] 69s45[17|13] 70s45[17|13]
+X 23 sc_compression.adb
+4U11*sc_compression 4b11 75l5 75t19
+5p3 image{18|10P8[17|17]} 7r24 8r24 9r24 10r24 11r24 12r24 13r24 14r24 15r24
+. 16r24 17r24 18r24 19r24 20r24 21r24 22r24 23r24 24r24 25r24 26r24 27r24
+. 28r24 29r24 30r24 31r24 32r24 33r24 34r24 35r24 36r24 37r24 38r24 39r24
+. 40r24 41r24 42r24 43r24 44r24 45r24 46r24 47r24 48r24 49r24 50r24 51r24
+. 52r24 53r24 54r24 55r24 56r24 57r24 58r24 59r24 60r24 61r24 62r24 63r24
+. 64r24 65r24 66r24 67r24 68r24 69r24 70r24 73r15
+

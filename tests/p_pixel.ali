@@ -1,0 +1,42 @@
+V "GNAT Lib v2014"
+P SS ZX
+
+RN
+RV NO_DISPATCHING_CALLS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_ELABORATION_CODE
+RV SPARK_05
+
+U p_pixel%s		p_pixel.ads		444a32ed EE OO PF PK IL
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.streams%s		a-stream.adb		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+
+D ada.ads		20140406181354 3ffc8e18 ada%s
+D a-except.ads		20140406181356 43d57f8c ada.exceptions%s
+D a-stream.ads		20140406181355 1a984740 ada.streams%s
+D a-tags.ads		20140406181357 dc4d0634 ada.tags%s
+D a-unccon.ads		20140406181359 f9eb8f06 ada.unchecked_conversion%s
+D p_pixel.ads		20160331173639 444a32ed p_pixel%s
+D system.ads		20140406181354 f2f2d889 system%s
+D s-exctab.ads		20140406181354 54135002 system.exception_table%s
+D s-parame.ads		20140406181358 06da98b2 system.parameters%s
+D s-secsta.ads		20140406181359 86a2856d system.secondary_stack%s
+D s-soflin.ads		20140406181358 aa763b52 system.soft_links%s
+D s-stache.ads		20140406181355 a37c21ec system.stack_checking%s
+D s-stalib.ads		20140406181355 fa0a3617 system.standard_library%s
+D s-stoele.ads		20140406181357 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20140406181355 ed88f8fb system.storage_elements%b
+D s-traent.ads		20140406181355 b5116092 system.traceback_entries%s
+X 6 p_pixel.ads
+1K9*p_pixel 6E8 11l5 11e12
+2R8*T_Pixel 3r26 6c8 9e13
+3P8*A_pixel(2R8)
+

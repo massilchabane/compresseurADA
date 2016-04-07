@@ -1,217 +1,263 @@
 package body p_compression is
 
-function compression(image: T_Image; debug : Natural := 0) return T_image is
-  imageCompressee: T_image := init(getHauteur(image), getLargeur(image));
+  --function compression(image : T_Image) return T_Image is
+  --begin
+    --afficher(image);
+    --return image;
+  --end compression;
 
-  image_YCbCr : P_Image_YCbCr.T_Image(0..getLargeur(image)-1, 0..getHauteur(image)-1);
-  bloc : T_bloc(0..getNombreBloc(getHauteur(image), getLargeur(image))-1);
-begin
-  if debug > 0 then
+  procedure compression(image : A_Image) is
+    blocks : p_blocks_YCbCr.A_Blocks;
+    work_image : p_image_YCbCr.A_Image;
+  begin
+    afficher(image);
+
     new_line;
-    put_line("Compression de l'image en cours : ");
-  end if;
-  -- Etape 1 : Conversion RGV -> YCbCr
-  if debug > 0 then
-    put("Conversion RGB vers Y'CbCr : ");
-  end if;
-  image_YCbCr := conversion_rgb_ycbcr(image);
-  if debug > 0 then
-    put("Ok");
+    put("Conversion : ");
+    work_image := convert_to_YCbCr(image);
+    put("OK");
+    new_Line;
+    p_image_YCbCr.afficher(work_image);
+
     new_line;
-  end if;
-
-  if debug > 1 then
-    P_Image_YCbCr.afficher(image_YCbCr);
-  end if;
-
-
-  -- Etape 2 : Sous echantillonage -> Facultatif
-
-  if debug > 0 then
-    put("Sous Echantillonage : ");
-  end if;
-  if debug > 0 then
-    put("Faculatif");
+    put("Amount of Blocks : ");
+    put(p_blocks_YCbCr.getAmountOfBlocks(work_image), 0);
     new_line;
-  end if;
-  if debug > 1 then
+
+    put_line("Blocks : ");
+    blocks := p_blocks_YCbCr.cutInBlocks(work_image);
+    p_blocks_YCbCr.afficher(blocks);
+    new_line;
+
+    put("Dct : ");
+    dct(blocks);
+    put("OK");
+    new_line;
+    p_blocks_YCbCr.afficher(blocks);
+    new_line;
+
+    put("Dct inverse : ");
+    dct(blocks, false);
+    put("OK");
+    new_line;
+    p_blocks_YCbCr.afficher(blocks);
+    new_line;
+
+  end compression;
+
+  procedure afficher(pxl: T_255) is
+  begin
+    put(Integer(pxl), 0);
+  end afficher;
+
+  function toFloat(p: T_255) return float is
+  begin
+    return 0.0;
+  end toFloat;
+
+
+
+  function convert_to_YCbCr(pixel: T_Pixel_RGB) return T_Pixel_YCbCr is
+    pixel_YCbCr : T_pixel_YCbCr;
+  begin
+    setY(pixel_YCbCr, 0.299 * float(getRed(pixel)) + 0.587 * float(getGreen(pixel)) + 0.114 * float(getBlue(pixel)));
+    setCb(pixel_YCbCr, -0.1687 * float(getRed(pixel)) - 0.3313 * float(getGreen(pixel)) - 0.5 * float(getBlue(pixel)) + 128.0);
+    setCr(pixel_YCbCr, 0.5 * float(getRed(pixel)) - 0.4187 * float(getGreen(pixel)) - 0.0813 * float(getBlue(pixel)) + 128.0);
+    return pixel_YCbCr;
+  end convert_to_YCbCr;
+
+  function convert_to_YCbCr(image: A_Image) return p_image_YCbCr.A_Image is
+    converted_image : p_image_YCbCr.A_Image := p_image_YCbCr.init(getWidth(image),getHeight(image));
+  begin
+    for x in 0..getWidth(image)-1 loop
+      for y in 0..getHeight(image)-1 loop
+        p_image_YCbCr.setPixel(converted_image, x, y, convert_to_YCbCr(getPixel(image, x, y)));
+      end loop;
+    end loop;
+    return converted_image;
+  end convert_to_YCbCr;
+
+
+  function convert_to_rgb(pixel: T_Pixel_YCbCr) return T_Pixel_RGB is
+    pixel_rgb : T_Pixel_RGB;
+  begin
+    setRed(pixel_rgb,T_255(getY(pixel) + 1.402*(getCr(pixel) - 128.0)));
+    setGreen(pixel_rgb,T_255(getY(pixel) - 0.34414*(getCb(pixel) - 128.0) - 0.71414*(getCr(pixel) - 128.0)));
+    setBlue(pixel_rgb,T_255(getY(pixel) + 1.772*(getCb(pixel) - 128.0)));
+    return pixel_rgb;
+  end convert_to_rgb;
+
+  procedure dct(blocks : in p_blocks_YCbCr.A_Blocks; mode : Boolean := true) is
+  begin
+    for x in 0..p_blocks_YCbCr.getWidth(blocks)-1 loop
+      for y in 0..p_blocks_YCbCr.getHeight(blocks)-1 loop
+        p_blocks_YCbCr.setImage(blocks, x, y, dct(p_blocks_YCbCr.getImage(blocks, x, y), mode));
+      end loop;
+    end loop;
+  end dct;
+
+  function dct(image : P_Image_YCbCr.A_Image; mode : Boolean) return P_Image_YCbCr.A_Image is
+    converted_image : P_Image_YCbCr.A_Image := P_Image_YCbCr.init(P_Image_YCbCr.getWidth(image), P_Image_YCbCr.getHeight(image));
+  begin
+    for x in 0..P_Image_YCbCr.getWidth(image)-1 loop
+      for y in 0..P_Image_YCbCr.getHeight(image)-1 loop
+        dct(image, converted_image, x, y, mode);
+      end loop;
+    end loop;
+    return converted_image;
+  end dct;
+
+  procedure dct(image_source: in P_Image_YCbCr.A_Image; converted_image: in P_Image_YCbCr.A_Image; i : in natural; j : in natural; mode : Boolean) is
+  begin
+    p_image_YCbCr.setPixel(converted_image, i, j, P_YCbCr.init(
+      dct_Y(image_source, i, j, mode),
+      dct_Cb(image_source, i, j, mode),
+      dct_Cr(image_source, i, j, mode)
+    ));
+  end dct;
+
+  function c(x:Natural) return float is
+  begin
+    if x = 0 then
+      return 1.0/Ada.Numerics.Elementary_Functions.Sqrt(Float(2));
+    else
+      return 1.0;
+    end if;
+  end c;
+
+  function dct_cos(a : Natural; b: Natural; N: Natural) return float is
+  begin
+    return Ada.Numerics.Elementary_Functions.cos(((2.0 * float(a) + 1.0) * float(b) * Ada.Numerics.Pi) / (2.0  * float(N)));
+  end dct_cos;
+
+  function dct_Y(image: P_Image_YCbCr.A_Image; i : natural; j : natural; mode : Boolean) return float is
+  begin
+    if mode then
+      return dct_Calc(image, i, j, P_YCbCr.getY'access);
+    else
+      return dct_Calc_inverse(image, i, j, P_YCbCr.getY'access);
+    end if;
+  end dct_Y;
+
+  function dct_Cb(image: P_Image_YCbCr.A_Image; i : natural; j : natural; mode : Boolean) return float is
+  begin
+    if mode then
+      return dct_Calc(image, i, j, P_YCbCr.getCb'access);
+    else
+      return dct_Calc_inverse(image, i, j, P_YCbCr.getCb'access);
+    end if;
+  end dct_Cb;
+
+  function dct_Cr(image: P_Image_YCbCr.A_Image; i : natural; j : natural; mode : Boolean) return float is
+  begin
+    if mode then
+      return dct_Calc(image, i, j, P_YCbCr.getCr'access);
+    else
+      return dct_Calc_inverse(image, i, j, P_YCbCr.getCr'access);
+    end if;
+  end dct_Cr;
+
+  function dct_Calc(image: P_Image_YCbCr.A_Image; i : natural; j : natural; get : Proc_Access_T) return float is
+    value : float := 0.0;
+    s1 : float := 0.0;
+    s2 : float := 0.0;
+    tmp : float := 0.0;
+    N : Natural := P_Image_YCbCr.getWidth(image);
+  begin
+    for x in 0..N-1 loop
+      for y in 0..N-1 loop
+        tmp := get(P_Image_YCbCr.getPixel(image, x, y)) * dct_cos(x, i, N) * dct_cos(y,j, N);
+        s1 := s1 + tmp;
+      end loop;
+      s2 := s2 + s1;
+      s1 := 0.0;
+    end loop;
+    value := (2.0 / float(Taille_Bloc))*c(i)*c(j)*s2;
+    return value;
+  end dct_Calc;
+
+  function dct_Calc_inverse(image: P_Image_YCbCr.A_Image; x : natural; y : natural; get : Proc_Access_T) return float is
+    value : float := 0.0;
+    s1 : float := 0.0;
+    s2 : float := 0.0;
+    tmp : float := 0.0;
+    N : Natural := P_Image_YCbCr.getWidth(image);
+  begin
+    for i in 0..N-1 loop
+      for j in 0..N-1 loop
+        tmp := c(i)*c(j)*get(P_Image_YCbCr.getPixel(image, i, j)) * dct_cos(x, i, N) * dct_cos(y,j, N);
+        s1 := s1 + tmp;
+      end loop;
+      s2 := s2 + s1;
+      s1 := 0.0;
+    end loop;
+    value := (2.0 / float(Taille_Bloc))*s2;
+    return value;
+  end dct_Calc_inverse;
+
+  function matrice_de_quantification return p_image_YCbCr.A_Image is
+    matrice : p_image_YCbCr.A_Image := p_image_YCbCr.init(Taille_Bloc, Taille_Bloc);
+    value : float := 0.0;
+  begin
+    for x in 0.. Taille_Bloc -1 loop
+      for y in 0 .. Taille_Bloc - 1 loop
+        value := 10.0 + float(x) + float(y);
+        p_image_YCbCr.setPixel(matrice, x, y, P_YCbCr.init(value, value, value));
+      end loop;
+    end loop;
+    return matrice;
+  end matrice_de_quantification;
+
+
+  procedure quantification(blocks : in p_blocks_YCbCr.A_Blocks; mode : Boolean := True) is
+  begin
+    for x in 0..p_blocks_YCbCr.getWidth(blocks)-1 loop
+      for y in 0..p_blocks_YCbCr.getHeight(blocks)-1 loop
+        quantification(p_blocks_YCbCr.getImage(blocks, x, y), mode);
+      end loop;
+    end loop;
+  end quantification;
+
+  procedure quantification(image : in P_Image_YCbCr.A_Image; mode : in Boolean) is
+  begin
+    for x in 0..P_Image_YCbCr.getWidth(image)-1 loop
+      for y in 0..P_Image_YCbCr.getHeight(image)-1 loop
+        quantification(image, x, y, mode);
+      end loop;
+    end loop;
+  end quantification;
+
+  procedure quantification(image : in P_Image_YCbCr.A_Image; x : natural; y : natural; mode : in Boolean) is
+  begin
+    quantification_y(image, x, y, mode);
+    quantification_cb(image, x, y, mode);
+    quantification_cr(image, x, y, mode);
+  end quantification;
+
+  -- @todo transform into function that returns float
+
+  procedure quantification_y(image : in P_Image_YCbCr.A_Image; x : natural; y : natural; mode : in Boolean) is
+  begin
     null;
-  end if;
+  end quantification_y;
 
-  -- Etape 3 : Découpage en blocs
-  if debug > 0 then
-    put("Découpage en blocs : ");
-  end if;
-  Bloc := decoupage_en_bloc(image_YCbCr);
-  if debug > 0 then
-    put("Ok");
-    new_line;
-  end if;
-  if debug > 1 then
-    for i in bloc'range loop
-      put("Bloc ");
-      put(Integer'Image(i));
-      put(" : ");
-      new_line;
-      P_Image_YCbCr.afficher(bloc(i).all);
-    end loop;
-  end if;
+  procedure quantification_cb(image : in P_Image_YCbCr.A_Image; x : natural; y : natural; mode : in Boolean) is
+  begin
+    null;
+  end quantification_cb;
 
-  -- Etape 4 : Transformée DCT
+  procedure quantification_cr(image : in P_Image_YCbCr.A_Image; x : natural; y : natural; mode : in Boolean)  is
+  begin
+    null;
+  end quantification_cr;
 
-
-
-
-  if debug > 0 then
-    new_line;
-  end if;
-  return image;
-end compression;
-
-function decoupage_en_bloc(image: P_Image_YCbCr.T_Image) return T_Bloc is
-  bloc : T_bloc(0..getNombreBloc(P_Image_YCbCr.getHauteur(image), P_Image_YCbCr.getLargeur(image))-1);
-  i : natural := 0;
-begin
-  for y in image'first(2)..image'last(2)/Taille_Bloc loop
-    for x in image'first(1)..image'last(1)/Taille_Bloc loop
-      if y = image'last(2)/Taille_Bloc and x = image'last(1)/Taille_Bloc then
-        bloc(i) := new P_Image_YCbCr.T_image(0..image'last(1)-x*Taille_Bloc,0..image'last(2)-y*Taille_Bloc);
-        bloc(i).all := P_Image_YCbCr.getBloc(image, x*Taille_Bloc, y*Taille_Bloc, image'last(1)-x*Taille_Bloc+1, image'last(2)-y*Taille_Bloc+1);
-      elsif y = image'last(2)/Taille_Bloc then
-        bloc(i) := new P_Image_YCbCr.T_image(0..Taille_Bloc-1,0..image'last(2)-y*Taille_Bloc);
-        bloc(i).all := P_Image_YCbCr.getBloc(image, x*Taille_Bloc, y*Taille_Bloc, Taille_Bloc, image'last(2)-y*Taille_Bloc+1);
-      elsif x = image'last(1)/Taille_Bloc then
-        bloc(i) := new P_Image_YCbCr.T_image(0..image'last(1)-x*Taille_Bloc,0..Taille_Bloc-1);
-        bloc(i).all := P_Image_YCbCr.getBloc(image, x*Taille_Bloc, y*Taille_Bloc, image'last(1)-x*Taille_Bloc+1, Taille_Bloc);
-      else
-        bloc(i) := new P_Image_YCbCr.T_image(0..Taille_Bloc-1,0..Taille_Bloc-1);
-        bloc(i).all := P_Image_YCbCr.getBloc(image, x*Taille_Bloc, y*Taille_Bloc, Taille_Bloc, Taille_Bloc);
-      end if;
-      i := i + 1;
-    end loop;
-  end loop;
-  return bloc;
-end decoupage_en_bloc;
-
-
-function conversion_rgb_ycbcr(pixel: T_pixel) return P_Image_YCbCr.T_Pixel is
-  pixel_YCbCr : P_Image_YCbCr.T_Pixel;
-begin
-  pixel_YCbCr.Y := 0.299 * float(pixel.rouge) + 0.587 * float(pixel.vert) + 0.114 * float(pixel.bleue);
-  pixel_YCbCr.Cb := -0.1687 * float(pixel.rouge) - 0.3313 * float(pixel.vert) - 0.5 * float(pixel.bleue) + 128.0;
-  pixel_YCbCr.Cr := 0.5 * float(pixel.rouge) - 0.4187 * float(pixel.vert) - 0.0813 * float(pixel.bleue) + 128.0;
-  return pixel_YCbCr;
-end conversion_rgb_ycbcr;
-
-function conversion_YCbCr_rgb(pixel: P_Image_YCbCr.T_Pixel) return T_pixel is
-  pixel_rgb : T_pixel;
-begin
-  pixel_rgb.rouge := natural(pixel.Y + 1.402*(pixel.Cr - 128.0));
-  pixel_rgb.vert := natural(pixel.Y - 0.34414*(pixel.Cb - 128.0) - 0.71414*(pixel.Cr - 128.0));
-  pixel_rgb.bleue := natural(pixel.Y + 1.772*(pixel.Cb - 128.0));
-  return pixel_rgb;
-end conversion_YCbCr_rgb;
-
-function conversion_rgb_ycbcr(image: T_Image) return P_Image_YCbCr.T_Image is
-  image_YCbCr : P_Image_YCbCr.T_Image:= P_Image_YCbCr.init(getLargeur(image), getHauteur(image));
-begin
-  for x in image'range(1) loop
-    for y in image'range(2)loop
-      P_Image_YCbCr.setPixel(image_YCbCr,x, y, conversion_rgb_ycbcr(getPixel(image,x,y)));
-    end loop;
-  end loop;
-  return image_YCbCr;
-end conversion_rgb_ycbcr;
-
-function getNombreBloc(hauteur: Natural; largeur: Natural) return natural is
-  nombreDeBloc :natural := 0;
-begin
-  nombreDeBloc := largeur/Taille_Bloc + hauteur/Taille_Bloc;
-
-  if largeur mod Taille_Bloc /= 0 then
-    nombreDeBloc := nombreDeBloc + 1;
-  end if;
-
-  if hauteur mod Taille_Bloc /= 0 then
-    nombreDeBloc := nombreDeBloc + 1;
-  end if;
-
-  if largeur mod Taille_Bloc /= 0 and hauteur mod Taille_Bloc /= 0 then
-    nombreDeBloc := nombreDeBloc + 1;
-  end if;
-
-  return nombreDeBloc;
-end getNombreBloc;
-
-
-procedure dct(bloc: in out T_Bloc) is
-begin
-  for i in bloc'range loop
-    dct(bloc(i).all);
-  end loop;
-end dct;
-
-procedure dct(image: in out P_Image_YCbCr.T_Image) is
-begin
-  for i in image'range(1) loop
-    for j in image'range(2) loop
-      dct(image, image(i,j), i , j);
-    end loop;
-  end loop;
-end dct;
-
-procedure dct(image: in out P_Image_YCbCr.T_Image; pixel: in out P_Image_YCbCr.T_Pixel; i : natural; j : natural) is
-begin
-  pixel.Y := dct_Y(image, pixel, i, j);
-  pixel.Cb := dct_Cb(image, pixel, i, j);
-  pixel.Cr := dct_Cr(image, pixel, i, j);
-end dct;
-
-function dct_Y(image: in out P_Image_YCbCr.T_Image; pixel: in out P_Image_YCbCr.T_Pixel; i : natural; j : natural) return float is
-  resultat : float := 0.0;
-begin
-  for x in image'range(1) loop
-    for y in image'range(2) loop
-      resultat := resultat + P_Image_YCbCr.getPixel(image, x, y).Y * Ada.Numerics.Elementary_Functions.cos(float(2*x+1) * float(i)  * Ada.Numerics.Pi / float(2 *image'length)) * Ada.Numerics.Elementary_Functions.cos(float(2*y+1) * float(j)  * Ada.Numerics.Pi / float(2 *image'length));
-    end loop;
-  end loop;
-  resultat := resultat * C(i) * C(j) * 2.0/float(image'length);
-  return resultat;
-end dct_Y;
-
-function dct_Cb(image: in out P_Image_YCbCr.T_Image; pixel: in out P_Image_YCbCr.T_Pixel; i : natural; j : natural) return float is
-  resultat : float := 0.0;
-begin
-  for x in image'range(1) loop
-    for y in image'range(2) loop
-      resultat := resultat + P_Image_YCbCr.getPixel(image, x, y).Cb * Ada.Numerics.Elementary_Functions.cos(float(2*x+1) * float(i)  * Ada.Numerics.Pi / float(2 *image'length)) * Ada.Numerics.Elementary_Functions.cos(float(2*y+1) * float(j)  * Ada.Numerics.Pi / float(2 *image'length));
-    end loop;
-  end loop;
-  resultat := resultat * C(i) * C(j) * 2.0/float(image'length);
-  return resultat;
-end dct_Cb;
-
-function dct_Cr(image: in out P_Image_YCbCr.T_Image; pixel: in out P_Image_YCbCr.T_Pixel; i : natural; j : natural) return float is
-  resultat : float := 0.0;
-begin
-  for x in image'range(1) loop
-    for y in image'range(2) loop
-      resultat := resultat + P_Image_YCbCr.getPixel(image, x, y).Cr * Ada.Numerics.Elementary_Functions.cos(float(2*x+1) * float(i)  * Ada.Numerics.Pi / float(2 *image'length)) * Ada.Numerics.Elementary_Functions.cos(float(2*y+1) * float(j)  * Ada.Numerics.Pi / float(2 *image'length));
-    end loop;
-  end loop;
-  resultat := resultat * C(i) * C(j) * 2.0/float(image'length);
-  return resultat;
-end dct_Cr;
-
-function c(x:Natural) return float is
-begin
-  if x = 0 then
-    return 1.0/Ada.Numerics.Elementary_Functions.Sqrt(Float(2));
-  else
-    return 1.0;
-  end if;
-end c;
-
+  function quantification(image : P_Image_YCbCr.A_Image; x : natural; y : natural; get : Proc_Access_T; mode : Boolean) return float is
+    matrice_quantification : p_image_YCbCr.A_Image := matrice_de_quantification;
+    P : float := get(P_Image_YCbCr.getPixel(image, x, y));
+    q : float := get(P_Image_YCbCr.getPixel(matrice_quantification, x, y));
+  begin
+    return (p + float(integer(q/2.0))) / q;
+  end quantification;
 
 
 

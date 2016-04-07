@@ -1,0 +1,111 @@
+V "GNAT Lib v2014"
+P ZX
+
+RN
+RV NO_ALLOCATORS
+RV NO_IO
+RV NO_LOCAL_ALLOCATORS
+RV NO_STANDARD_STORAGE_POOLS
+RV SPARK_05
+
+U p_image%b		p_image.adb		b4539239 NE OO PK GE
+
+U p_image%s		p_image.ads		78844338 BN EE NE OO PK GE IL
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+
+D ada.ads		20140406181354 3ffc8e18 ada%s
+D a-except.ads		20140406181356 43d57f8c ada.exceptions%s
+D a-finali.ads		20140406181359 69f99942 ada.finalization%s
+D a-ioexce.ads		20140406181358 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20140406181355 1a984740 ada.streams%s
+D a-tags.ads		20140406181357 dc4d0634 ada.tags%s
+D a-textio.ads		20140406181359 386df5d4 ada.text_io%s
+D a-unccon.ads		20140406181359 f9eb8f06 ada.unchecked_conversion%s
+D interfac.ads		20140406181359 69adb1b9 interfaces%s
+D i-cstrea.ads		20140406181357 febc86ed interfaces.c_streams%s
+D p_image.ads		20160402105731 40e9b6ec p_image%s
+D p_image.adb		20160402105744 f4ba24d5 p_image%b
+D system.ads		20140406181354 f2f2d889 system%s
+D s-crtl.ads		20140406181356 2c012597 system.crtl%s
+D s-exctab.ads		20140406181354 54135002 system.exception_table%s
+D s-ficobl.ads		20140406181355 078245e4 system.file_control_block%s
+D s-finmas.ads		20140406181356 814daec4 system.finalization_masters%s
+D s-finroo.ads		20140406181359 4ff27390 system.finalization_root%s
+D s-parame.ads		20140406181358 06da98b2 system.parameters%s
+D s-pooglo.ads		20140406181357 542f33d0 system.pool_global%s
+D s-soflin.ads		20140406181358 aa763b52 system.soft_links%s
+D s-stache.ads		20140406181355 a37c21ec system.stack_checking%s
+D s-stalib.ads		20140406181355 fa0a3617 system.standard_library%s
+D s-stoele.ads		20140406181357 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20140406181355 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20140406181357 b16154c2 system.storage_pools%s
+D s-traent.ads		20140406181355 b5116092 system.traceback_entries%s
+D s-unstyp.ads		20140406181356 510692af system.unsigned_types%s
+D s-wchcon.ads		20140406181358 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 19e8 11|1r6 2r5
+X 7 a-textio.ads
+49K13*Text_IO 471e16 11|1w10 2r9
+166U14*New_Line 12|61s7
+X 11 p_image.ads
+5+8 T_Pixel 6r34 17r67 18r67 20r85 21r81 24r57 30r65 12|13r67 14r13 20r67
+. 44r57 70r86 75r81
+6U18 afficher 6>27 12|59s9
+6*27 pixel{5+8}
+8k9*P_Image 5z8 6z18 30E8 31l5 31e12 12|1b14 80l5 80t12
+9A8*T_Image 10r26 17r28 20r36 26r33 30c8 12|13r28 27r27 39r27 55r33 70r36
+10P8*A_image(9A8) 13r30 14r29 15r34 15r107 18r28 21r32 23r57 24r73 27r33
+. 12|3r30 8r29 20r28 26r34 26r106 27r12 38r57 39r12 44r73 45r12 65r33 75r32
+11X3*Falsche_Format
+13V12*getHeight{natural} 13>22 12|3b12 6l7 6t16
+13p22 image{10P8} 12|3b22 5r12
+14V12*getWidth{natural} 14>21 12|8b12 11l7 11t15
+14p21 image{10P8} 12|8b21 10r12
+15V12*getPartOfImage{10P8} 15>27 15>43 15>55 15>67 15>83 12|26b12 35l7 35t21
+15p27 image{10P8} 12|26b27 31r35
+15i43 x{natural} 12|26b43 31r42
+15i55 y{natural} 12|26b54 31r47
+15i67 width{natural} 12|26b66 27r38 29r17
+15i83 height{natural} 12|26b82 27r50 30r19
+17V12*getPixel{5+8} 17>21 17>37 17>48 12|13b12 17l7 17t15 22s12
+17a21 image{9A8} 12|13b21 14r24
+17i37 x{natural} 12|13b37 14r30
+17i48 y{natural} 12|13b48 14r32
+18V12*getPixel{5+8} 18>21 18>37 18>48 12|20b12 23l7 23t15 31s26
+18p21 image{10P8} 12|20b21 22r21
+18i37 x{natural} 12|20b37 22r32
+18i48 y{natural} 12|20b48 22r35
+20U13*setPixel 20=22 20>45 20>60 20>75 12|70b13 73l7 73t15 77s5
+20a22 image{9A8} 12|70b22 72m5
+20i45 x{natural} 12|70b45 72r11
+20i60 y{natural} 12|70b60 72r14
+20*75 pixel{5+8} 12|70b75 72r20
+21U13*setPixel 21>22 21>41 21>56 21>71 12|75b13 78l7 78t15
+21p22 image{10P8} 12|75b22 77r14
+21i41 x{natural} 12|75b41 77r25
+21i56 y{natural} 12|75b56 77r28
+21*71 pixel{5+8} 12|75b71 77r31
+23V12*init{10P8} 23>17 23>33 12|38b12 42l7 42t11 45s23
+23i17 width{natural} 12|38b17 39r38
+23i33 height{natural} 12|38b33 39r50
+24V12*init{10P8} 24>17 24>33 24>50 12|44b12 53l7 53t11
+24i17 width{natural} 12|44b17 45r28
+24i33 height{natural} 12|44b33 45r35
+24*50 pixel{5+8} 12|44b50 49r28
+26U13*afficher 26>22 12|55b13 63l7 63t15 67s5
+26a22 image{9A8} 12|55b22 57r14 58r16 59r18
+27U13*afficher 27>22 12|65b13 68l7 68t15
+27p22 image{10P8} 12|65b22 67r14
+X 12 p_image.adb
+14*5 pixel{11|5+8} 16r12
+27p5 part{11|10P8} 31r9 34r12
+29i9 i{integer} 31r18 31r44
+30i11 j{integer} 31r20 31r49
+39p5 image{11|10P8} 41r12
+45p5 image{11|10P8} 47r14 48r16 49r9 52r12
+47i9 x{integer} 49r19
+48i11 y{integer} 49r22
+57i9 x{integer} 59r24
+58i11 y{integer} 59r26
+

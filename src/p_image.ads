@@ -1,31 +1,31 @@
-with Ada.Text_IO, Ada.Integer_Text_IO;
-use Ada.Text_IO, Ada.Integer_Text_IO;
+with Ada.Text_IO;
+use Ada.Text_IO;
+
+generic
+  type T_Pixel is private;
+  with procedure afficher(pixel: T_Pixel);
 
 package P_Image is
+  type T_Image (<>) is private;
+  type A_image is access T_image;
+  Falsche_Format : Exception;
 
-subtype T_255 is Integer range 0..255;
+  function getHeight(image : A_Image) return Natural;
+  function getWidth(image : A_Image) return Natural;
+  function getPartOfImage(image: A_Image; x: Natural; y: Natural; width: Natural; height: Natural) return A_Image;
 
-type T_pixel is record
-  rouge: T_255;
-  vert: T_255;
-  bleue: T_255;
-end record;
+  function getPixel(image: T_image; x:Natural; y: Natural) return T_pixel;
+  function getPixel(image: A_image; x:Natural; y: Natural) return T_pixel;
 
-black_pixel : constant T_pixel := (0,0,0);
-white_pixel : constant T_pixel := (255, 255, 255);
+  procedure setPixel(image: in out T_image; x: in Natural; y: in Natural; pixel: in T_Pixel);
+  procedure setPixel(image: in A_image; x: in Natural; y: in Natural; pixel: in T_Pixel);
 
-type T_image is array (natural range <>, natural range <>) of T_pixel;
+  function init(width: Natural; height: natural) return A_Image;
+  function init(width: Natural; height: Natural; pixel: T_pixel) return A_Image;
 
-function init(largeur:Natural; hauteur:Natural; default:T_Pixel := white_pixel) return T_image;
+  procedure afficher(image : in T_Image);
+  procedure afficher(image : in A_Image);
 
-function getPixel(image: T_image; x:Natural; y: Natural) return T_pixel;
-
-procedure setPixel(image: in out T_image; x: in Natural; y: in Natural; pixel: in T_pixel);
-
-
-function getHauteur(image: T_image) return natural;
-function getLargeur(image: T_image) return natural;
-
-procedure afficher(image: T_image);
-procedure afficher(pixel: T_pixel);
+  private
+  type T_image is array (natural range <>, natural range <>) of T_Pixel;
 end P_Image;

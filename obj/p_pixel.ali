@@ -1,21 +1,16 @@
 V "GNAT Lib v2014"
-P SS ZX
+P ZX
 
 RN
 RV NO_IO
-RV NO_IMPLICIT_LOOPS
-RV NO_SECONDARY_STACK
 RV SPARK_05
 
-U p_image%b		p_image.adb		09604b95 NE OO PK IL
+U p_pixel%b		p_pixel.adb		05ed7274 NE OO PK
 W ada.tags%s		a-tags.adb		a-tags.ali
-W interfaces%s		interfac.ads		interfac.ali
-W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 
-U p_image%s		p_image.ads		90ef2cd6 EE NE OO PK
+U p_pixel%s		p_pixel.ads		bdd9b6b0 EE NE OO PK
 W ada%s			ada.ads			ada.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
-W ada.tags%s		a-tags.adb		a-tags.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 
 D ada.ads		20140406181354 3ffc8e18 ada%s
@@ -30,8 +25,8 @@ D a-tiinio.ads		20140406181359 aa04e5d6 ada.text_io.integer_io%s
 D a-unccon.ads		20140406181359 f9eb8f06 ada.unchecked_conversion%s
 D interfac.ads		20140406181359 69adb1b9 interfaces%s
 D i-cstrea.ads		20140406181357 febc86ed interfaces.c_streams%s
-D p_image.ads		20160225153921 5ec950a6 p_image%s
-D p_image.adb		20160225153942 57a91b33 p_image%b
+D p_pixel.ads		20160317164224 73ffcac0 p_pixel%s
+D p_pixel.adb		20160317164247 7612b8b4 p_pixel%b
 D system.ads		20140406181354 f2f2d889 system%s
 D s-crtl.ads		20140406181356 2c012597 system.crtl%s
 D s-exctab.ads		20140406181354 54135002 system.exception_table%s
@@ -40,7 +35,6 @@ D s-finmas.ads		20140406181356 814daec4 system.finalization_masters%s
 D s-finroo.ads		20140406181359 4ff27390 system.finalization_root%s
 D s-parame.ads		20140406181358 06da98b2 system.parameters%s
 D s-pooglo.ads		20140406181357 542f33d0 system.pool_global%s
-D s-secsta.ads		20140406181359 86a2856d system.secondary_stack%s
 D s-soflin.ads		20140406181358 aa763b52 system.soft_links%s
 D s-stache.ads		20140406181355 a37c21ec system.stack_checking%s
 D s-stalib.ads		20140406181355 fa0a3617 system.standard_library%s
@@ -56,45 +50,42 @@ X 4 a-inteio.ads
 18K13*Integer_Text_IO[9|46] 13|1w23 2r22
 X 8 a-textio.ads
 49K13*Text_IO 471e16 13|1w10 2r9
-166U14*New_Line 14|21s9
-208U14*Put 14|6s7 8s7 10s7 12s7
-X 9 a-tiinio.ads
-66U14*Put 14|7s7[4|18] 9s7[4|18] 11s7[4|18]
-X 13 p_image.ads
-4K9*P_Image 32l5 32e12 14|1b14 50l5 50t12
-6I9*T_255{integer} 9r10 10r9 11r10
-8R6*T_pixel 12e11 14r24 15r24 18r63 20r57 22r65 24r83 31r27 14|4r31 25r59
-. 31r67 36r85
-9i3*rouge{6I9} 14|7r17
-10i3*vert{6I9} 14|9r17
-11i3*bleue{6I9} 14|11r17
-14r1*black_pixel{8R6}
-15r1*white_pixel{8R6} 20r68 14|25r70
-18A6*T_image(8R6)<integer><integer> 20r88 22r26 24r34 27r28 28r28 30r27 14|15r31
-. 25r90 26r13 31r28 36r36 41r30 45r30
-20V10*init{18A6} 20>15 20>32 20>49 14|25b12 29l7 29t11
-20i15 largeur{natural} 14|25b17 26r24
-20i32 hauteur{natural} 14|25b34 26r35
-20r49 default{8R6} 14|25b51 26r66
-22V10*getPixel{8R6} 22>19 22>35 22>46 14|31b12 34l7 34t15
-22a19 image{18A6} 14|31b21 33r12
-22i35 x{natural} 14|31b37 33r18
-22i46 y{natural} 14|31b48 33r20
-24U11*setPixel 24=20 24>43 24>58 24>73 14|36b13 39l7 39t15
-24a20 image{18A6} 14|36b22 38m5
-24i43 x{natural} 14|36b45 38r11
-24i58 y{natural} 14|36b60 38r13
-24r73 pixel{8R6} 14|36b75 38r19
-27V10*getHauteur{natural} 27>21 14|41b12 44l7 44t17
-27a21 image{18A6} 14|41b23 43r12
-28V10*getLargeur{natural} 28>21 14|45b12 48l7 48t17
-28a21 image{18A6} 14|45b23 47r12
-30U11*afficher 30>20 14|15b15 23l9 23t17
-30a20 image{18A6} 14|15b24 17r16 18r18 19r20
-31U11*afficher 31>20 14|4b15 13l9 13t17 19s11
-31r20 pixel{8R6} 14|4b24 7r11 9r11 11r11
-X 14 p_image.adb
-17i11 x{integer} 19r26
-18i13 y{integer} 19r28
-26a5 image{13|18A6} 28r12
+X 13 p_pixel.ads
+4K9*P_Pixel 26E8 31l5 31e12 14|1b14 69l5 69t12
+5R8*T_pixel 8r63 10r27 11r35 12r29 13r37 14r28 15r36 17r31 18r31 19r29 20r31
+. 21r30 23r29 26c8 30e13 14|3r63 4r13 9r27 14r35 19r29 24r37 29r28 34r36
+. 39r31 44r31 49r29 54r31 59r30 64r29
+6I11*T_255{natural} 8r22 8r36 8r49 10r43 11r52 12r45 13r56 14r44 15r54 27r10
+. 28r12 29r11 14|3r22 3r36 3r49 9r43 14r52 19r45 24r56 29r44 34r54
+8V12*init{5R8} 8>17 8>29 8>43 14|3b12 7l7 7t11 41s12 46s12 51s12 56s12 61s12
+8i17 Red{6I11} 14|3b17 4r25
+8i29 Green{6I11} 14|3b29 4r29
+8i43 Blue{6I11} 14|3b43 4r35
+10V12*getRed{6I11} 10>19 14|9b12 12l7 12t13
+10r19 pixel{5R8} 14|9b19 11r12
+11U13*setRed 11=20 11>44 14|14b13 17l7 17t13
+11r20 pixel{5R8} 14|14b20 16m5
+11i44 Red{6I11} 14|14b44 16r18
+12V12*getGreen{6I11} 12>21 14|19b12 22l7 22t15
+12r21 pixel{5R8} 14|19b21 21r12
+13U13*setGreen 13=22 13>46 14|24b13 27l7 27t15
+13r22 pixel{5R8} 14|24b22 26m5
+13i46 Green{6I11} 14|24b46 26r20
+14V12*getBlue{6I11} 14>20 14|29b12 32l7 32t14
+14r20 pixel{5R8} 14|29b20 31r12
+15U13*setBlue 15=21 15>45 14|34b13 37l7 37t14
+15r21 pixel{5R8} 14|34b21 36m5
+15i45 Blue{6I11} 14|34b45 36r19
+17V12*black_pixel{5R8} 14|39b12 42l7 42t18
+18V12*white_pixel{5R8} 14|44b12 47l7 47t18
+19V12*red_pixel{5R8} 14|49b12 52l7 52t16
+20V12*green_pixel{5R8} 14|54b12 57l7 57t18
+21V12*blue_pixel{5R8} 14|59b12 62l7 62t17
+23U13*afficher 23>22 14|64b13 67l7 67t15
+23r22 pixel{5R8} 14|64b22
+27i5*Red{6I11} 14|11r18 16m11
+28i5*Green{6I11} 14|21r18 26m11
+29i5*Blue{6I11} 14|31r18 36m11
+X 14 p_pixel.adb
+4r5 pixel{13|5R8} 6r12
 
