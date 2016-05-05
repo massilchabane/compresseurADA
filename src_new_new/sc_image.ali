@@ -7,7 +7,7 @@ RV NO_FLOATING_POINT
 RV NO_IO
 RV SPARK_05
 
-U sc_image%b		sc_image.adb		dcc7860a NE OO SU IL
+U sc_image%b		sc_image.adb		37cf9741 NE OO SU IL
 W ada%s			ada.ads			ada.ali
 W ada.tags%s		a-tags.adb		a-tags.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
@@ -29,9 +29,10 @@ D interfac.ads		20140406181359 69adb1b9 interfaces%s
 D i-cstrea.ads		20140406181357 febc86ed interfaces.c_streams%s
 D p_image.ads		20160505163404 8e84257a p_image%s
 D p_image-compression.ads  20160505164435 b66153fd p_image.compression%s
-D p_image_float.ads	20160505071708 a12aa6f0 p_image_float%s
+D p_image-file.ads	20160505204434 8dfd6cac p_image.file%s
+D p_image_float.ads	20160505195501 dcf95bbc p_image_float%s
 D p_pixel.ads		20160505170112 644982c7 p_pixel%s
-D sc_image.adb		20160505134524 4580d52e sc_image%b
+D sc_image.adb		20160505200241 d35b3929 sc_image%b
 D system.ads		20140406181354 f2f2d889 system%s
 D s-crtl.ads		20140406181356 2c012597 system.crtl%s
 D s-exctab.ads		20140406181354 54135002 system.exception_table%s
@@ -51,46 +52,45 @@ D s-traent.ads		20140406181355 b5116092 system.traceback_entries%s
 D s-unstyp.ads		20140406181356 510692af system.unsigned_types%s
 D s-wchcon.ads		20140406181358 1b7d22d2 system.wch_con%s
 X 1 ada.ads
-16K9*Ada 19e8 18|1r6 2r5
+16K9*Ada 19e8 19|1r6 2r5
 X 10 a-textio.ads
-49K13*Text_IO 471e16 18|1w10 2r9
-166U14*New_Line 18|15s3 53s3 56s3 60s3
-242U14*Put 18|9s3 10s3 20s3 22s3 27s3 30s3
+49K13*Text_IO 471e16 19|1w10 2r9
+166U14*New_Line 19|15s3
+242U14*Put 19|9s3 10s3 20s3 22s3 27s3 30s3
 X 14 p_image.ads
-11K11*P_Pixel_Init[17|6] 18|2r88[16|7]
+11K11*P_Pixel_Init[18|6] 19|2r88[17|7]
 14R8*T_Image
-15P8*A_image(14R8[16|7]) 18|5r9[16|7] 25r30[16|7]
-23U13*setPixel 18|35s3[16|7] 36s3[16|7] 37s3[16|7] 38s3[16|7] 39s3[16|7]
-. 40s3[16|7] 41s3[16|7] 42s3[16|7] 43s3[16|7] 44s3[16|7] 45s3[16|7] 46s3[16|7]
-. 47s3[16|7] 48s3[16|7] 49s3[16|7] 50s3[16|7]
-25V12*init{15P8[16|7]} 18|5s20[16|7]
-28U13*act 18|29s3[16|7]
-X 15 p_image-compression.ads
-9V12*compression{14|15P8[16|7]} 18|54s12[16|10]
-10V12*decompression{14|15P8[16|7]} 18|58s12[16|10]
-X 16 p_image_float.ads
-4K9*P_Image_Float 12e18 18|1w19 2r18 2r33 2r61 2r102
-7K11*P_Image_Init[14|9] 18|2r47 2r75
-10K11*P_Compression[15|6] 18|2r116
-X 17 p_pixel.ads
+15P8*A_image(14R8[17|7]) 19|5r9[17|7] 25r30[17|7]
+23U13*setPixel 19|35s3[17|7] 36s3[17|7] 37s3[17|7] 38s3[17|7] 39s3[17|7]
+. 40s3[17|7] 41s3[17|7] 42s3[17|7] 43s3[17|7] 44s3[17|7] 45s3[17|7] 46s3[17|7]
+. 47s3[17|7] 48s3[17|7] 49s3[17|7] 50s3[17|7]
+25V12*init{15P8[17|7]} 19|5s20[17|7]
+28U13*act 19|29s3[17|7]
+X 16 p_image-file.ads
+8V12*open{14|15P8[17|7]} 19|62s12[17|13]
+X 17 p_image_float.ads
+4K9*P_Image_Float 16e18 19|1w19 2r18 2r33 2r61 2r102 2r131
+7K11*P_Image_Init[14|9] 19|2r47 2r75
+10K11*P_Compression[15|6] 19|2r116
+13K11*P_Image_File[16|4] 19|2r145
+X 18 p_pixel.ads
 8R8*T_Pixel
-9P8*A_Pixel(8R8[14|11[16|7]]) 18|18r30[14|11[16|7]]
-17V12*init{9P8[14|11[16|7]]} 18|35s25[14|11[16|7]] 36s25[14|11[16|7]] 37s25[14|11[16|7]]
-. 38s25[14|11[16|7]] 39s25[14|11[16|7]] 40s25[14|11[16|7]] 41s25[14|11[16|7]]
-. 42s25[14|11[16|7]] 43s25[14|11[16|7]] 44s25[14|11[16|7]] 45s25[14|11[16|7]]
-. 46s25[14|11[16|7]] 47s25[14|11[16|7]] 48s25[14|11[16|7]] 49s25[14|11[16|7]]
-. 50s25[14|11[16|7]]
-28U13*act 18|21s3[14|11[16|7]]
-X 18 sc_image.adb
-4U11*sc_image 4b11 61l5 61t13
-5p1 image{14|15P8[16|7]} 35r12 36r12 37r12 38r12 39r12 40r12 41r12 42r12
-. 43r12 44r12 45r12 46r12 47r12 48r12 49r12 50r12 52r12 54m3 54r24 55r12
-. 58m3 58r26 59r12
+9P8*A_Pixel(8R8[14|11[17|7]]) 19|18r30[14|11[17|7]]
+17V12*init{9P8[14|11[17|7]]} 19|35s25[14|11[17|7]] 36s25[14|11[17|7]] 37s25[14|11[17|7]]
+. 38s25[14|11[17|7]] 39s25[14|11[17|7]] 40s25[14|11[17|7]] 41s25[14|11[17|7]]
+. 42s25[14|11[17|7]] 43s25[14|11[17|7]] 44s25[14|11[17|7]] 45s25[14|11[17|7]]
+. 46s25[14|11[17|7]] 47s25[14|11[17|7]] 48s25[14|11[17|7]] 49s25[14|11[17|7]]
+. 50s25[14|11[17|7]]
+28U13*act 19|21s3[14|11[17|7]]
+X 19 sc_image.adb
+4U11*sc_image 4b11 64l5 64t13
+5p1 image{14|15P8[17|7]} 35r12 36r12 37r12 38r12 39r12 40r12 41r12 42r12
+. 43r12 44r12 45r12 46r12 47r12 48r12 49r12 50r12 62m3
 7U11 afficher 7b11 7=20 11l5 11t13 21r15
 7f20 e{float} 9r19
 13U11 clear 13b11 16l5 16t10 28s3 29r32 31s3
 18U11 afficher 18b11 18>20 23l5 23t13 29r15
-18p20 pixel{17|9P8[14|11[16|7]]} 21r7
-25U11 afficher 25b11 25>20 32l5 32t13 52s3 55s3 59s3
-25p20 image{14|15P8[16|7]} 29r7
+18p20 pixel{18|9P8[14|11[17|7]]} 21r7
+25U11 afficher 25b11 25>20 32l5 32t13
+25p20 image{14|15P8[17|7]} 29r7
 

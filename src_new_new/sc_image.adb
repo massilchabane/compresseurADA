@@ -1,5 +1,5 @@
 with Ada.Text_IO, P_Image_Float;
-use Ada.Text_IO, P_Image_Float, P_Image_Float.P_Image_Init, P_Image_Float.P_Image_Init.P_Pixel_Init, P_Image_Float.P_Compression;
+use Ada.Text_IO, P_Image_Float, P_Image_Float.P_Image_Init, P_Image_Float.P_Image_Init.P_Pixel_Init, P_Image_Float.P_Compression, P_Image_Float.P_Image_File;
 
 procedure sc_image is
 image : A_Image := init(4, 4, 3);
@@ -49,13 +49,16 @@ begin
   setPixel(image, 3, 2, init((0.0,0.0,0.0)));
   setPixel(image, 3, 3, init((0.0,0.0,0.0)));
 
-  afficher(image);
-  new_line;
-  image := compression(image);
-  afficher(image);
-  new_line;
+  --afficher(image);
+  --new_line;
+  --image := compression(image);
+  --afficher(image);
+  --new_line;
 
-  image := decompression(image);
-  afficher(image);
-  new_line;
+  --image := decompression(image);
+  --afficher(image);
+  --new_line;
+
+  image := open("gling.ppm");
+
 end sc_image;
