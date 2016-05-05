@@ -1,0 +1,86 @@
+V "GNAT Lib v2014"
+M P W=b
+P ZX
+
+RN
+RV NO_ACCESS_SUBPROGRAMS
+RV NO_ALLOCATORS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_FLOATING_POINT
+RV NO_IO
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_LOCAL_ALLOCATORS
+RV NO_STANDARD_ALLOCATORS_AFTER_ELABORATION
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV SPARK_05
+
+U sc_pixel%b		sc_pixel.adb		9d569cb2 NE OO SU IL
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W interfaces%s		interfac.ads		interfac.ali
+W p_pixel%s		p_pixel.adb		p_pixel.ali
+W system%s		system.ads		system.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.img_real%s	s-imgrea.adb		s-imgrea.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+
+D ada.ads		20140406181354 3ffc8e18 ada%s
+D a-except.ads		20140406181356 43d57f8c ada.exceptions%s
+D a-finali.ads		20140406181359 69f99942 ada.finalization%s
+D a-ioexce.ads		20140406181358 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20140406181355 1a984740 ada.streams%s
+D a-tags.ads		20140406181357 dc4d0634 ada.tags%s
+D a-textio.ads		20140406181359 386df5d4 ada.text_io%s
+D a-unccon.ads		20140406181359 f9eb8f06 ada.unchecked_conversion%s
+D interfac.ads		20140406181359 69adb1b9 interfaces%s
+D i-cstrea.ads		20140406181357 febc86ed interfaces.c_streams%s
+D p_pixel.ads		20160505072702 b18763a0 p_pixel%s
+D p_pixel.adb		20160505081210 0b9be27e p_pixel%b
+D sc_pixel.adb		20160505081240 14bc0ac6 sc_pixel%b
+D system.ads		20140406181354 f2f2d889 system%s
+D s-crtl.ads		20140406181356 2c012597 system.crtl%s
+D s-exctab.ads		20140406181354 54135002 system.exception_table%s
+D s-ficobl.ads		20140406181355 078245e4 system.file_control_block%s
+D s-finmas.ads		20140406181356 814daec4 system.finalization_masters%s
+D s-finroo.ads		20140406181359 4ff27390 system.finalization_root%s
+D s-imgrea.ads		20140406181357 c7a851e2 system.img_real%s
+D s-parame.ads		20140406181358 06da98b2 system.parameters%s
+D s-pooglo.ads		20140406181357 542f33d0 system.pool_global%s
+D s-soflin.ads		20140406181358 aa763b52 system.soft_links%s
+D s-stache.ads		20140406181355 a37c21ec system.stack_checking%s
+D s-stalib.ads		20140406181355 fa0a3617 system.standard_library%s
+D s-stoele.ads		20140406181357 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20140406181355 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20140406181357 b16154c2 system.storage_pools%s
+D s-traent.ads		20140406181355 b5116092 system.traceback_entries%s
+D s-unstyp.ads		20140406181356 510692af system.unsigned_types%s
+D s-wchcon.ads		20140406181358 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 19e8 13|1r6 2r5
+X 7 a-textio.ads
+49K13*Text_IO 471e16 13|1w10 2r9
+166U14*New_Line 13|31s3 34s3 37s3
+242U14*Put 13|16s5 17s5 22s5 24s5
+X 11 p_pixel.ads
+6k9*P_Pixel 37e12 13|1w19 11r31
+8R8 T_Pixel
+9P8 A_Pixel(8R8[13|11]) 13|20r32[11] 27r11[11]
+17V12 init{9P8[13|11]} 13|27s22[11]
+23U13 convert_to_YCbCr 13|32s3[11]
+24U13 convert_to_RGB 13|35s3[11]
+28U13 act 13|23s5[11]
+X 13 sc_pixel.adb
+4U11*sc_pixel 4b11 38l5 38t13
+6V12 to_float{float} 6b12 6>21 9l7 9t15 11r46 11r56
+6f21 f{float} 8r12
+11K11 P_Pixel_Init[11|6] 12r7
+14U13 afficher 14b13 14=22 18l7 18t15 23r17
+14f22 e{float} 16r21
+20U13 afficher 20b13 20>22 25l7 25t15 30s3 33s3 36s3
+20p22 pixel{11|9P8[11]} 23r9
+27p3 pixel{11|9P8[11]} 30r12 32r20 33r12 35r18 36r12
+
