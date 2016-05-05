@@ -39,6 +39,11 @@ package body P_Pixel is
     return pixel;
   end init;
 
+  function init(pixel: A_Pixel) return A_Pixel is
+  begin
+    return init(pixel.all.Canaux.all);
+  end init;
+
   procedure convert_to_YCbCr(pixel: in A_Pixel) is
     ancien_pixel : A_Pixel := init(pixel.Canaux.all);
   begin

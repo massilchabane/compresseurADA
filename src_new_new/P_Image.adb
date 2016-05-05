@@ -31,17 +31,6 @@ package body P_Image is
     return image;
   end init;
 
-  function init(width: Natural; height: Natural; pixel: A_pixel) return A_Image is
-    image: A_image := init(width, height, getNbCanaux(pixel));
-  begin
-    for x in image.all.pixels.all'range(1) loop
-      for y in image.all.pixels.all'range(2) loop
-        image.all.pixels.all(x, y) := pixel;
-      end loop;
-    end loop;
-    return image;
-  end init;
-
   procedure act(image: A_Image; what_to_do_on_pixel: access procedure (pixel: in A_Pixel); what_to_do_on_line: access procedure) is
   begin
     for x in image.all.pixels.all'range(1) loop
@@ -63,5 +52,21 @@ package body P_Image is
   begin
     P_Image.act(image, P_Pixel_Init.convert_to_RGB'access, null);
   end convert_to_RGB;
+
+  procedure destroy(image: in out A_Image; destroy_completly : Boolean := TRUE) is
+  begin
+    null;
+  end destroy;
+
+  function init(image: A_Image) return A_Image is
+    image_copie : A_Image := init(getWidth(image), getHeight(image), image.all.Nb_canaux);
+  begin
+    for x in image.all.pixels.all'range(1) loop
+      for y in image.all.pixels.all'range(2) loop
+        setPixel(image_copie, x, y, init(getPixel(image, x, y)));
+      end loop;
+    end loop;
+    return image_copie;
+  end init;
 
 end P_Image;

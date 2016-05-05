@@ -11,9 +11,9 @@ RV NO_LOCAL_ALLOCATORS
 RV NO_STANDARD_STORAGE_POOLS
 RV SPARK_05
 
-U p_image%b		p_image.adb		67852f92 NE OO PK GE
+U p_image%b		p_image.adb		5e1f7c23 NE OO PK GE
 
-U p_image%s		p_image.ads		897ef6ea BN EE NE OO PK GE IL
+U p_image%s		p_image.ads		d2a05269 BN EE NE OO PK GE IL
 W ada%s			ada.ads			ada.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W p_pixel%s		p_pixel.adb		p_pixel.ali
@@ -28,10 +28,10 @@ D a-textio.ads		20140406181359 386df5d4 ada.text_io%s
 D a-unccon.ads		20140406181359 f9eb8f06 ada.unchecked_conversion%s
 D interfac.ads		20140406181359 69adb1b9 interfaces%s
 D i-cstrea.ads		20140406181357 febc86ed interfaces.c_streams%s
-D p_image.ads		20160501192441 0094609e p_image%s
-D p_image.adb		20160501154629 67114f0c p_image%b
-D p_pixel.ads		20160505072702 b18763a0 p_pixel%s
-D p_pixel.adb		20160505081210 0b9be27e p_pixel%b
+D p_image.ads		20160505163404 8e84257a p_image%s
+D p_image.adb		20160505170056 d09b5959 p_image%b
+D p_pixel.ads		20160505170112 644982c7 p_pixel%s
+D p_pixel.adb		20160505170248 8d13a581 p_pixel%b
 D system.ads		20140406181354 f2f2d889 system%s
 D s-crtl.ads		20140406181356 2c012597 system.crtl%s
 D s-exctab.ads		20140406181354 54135002 system.exception_table%s
@@ -59,62 +59,65 @@ X 11 p_image.ads
 6*26 e{5+8}
 7V17 to_element{5+8} 7>28 11r58
 7f28 e{float}
-9k9*P_Image 5z8 6z17 7z17 31E8 42l5 42e12 12|1b14 59r5 64r5 67l5 67t12
-11K11*P_Pixel_Init[13|6] 12r7 12|59r24 64r24
-14R8*T_Image 15r26 34c8 37e13 12|27r27
-15P8*A_image(14R8) 18r30 19r29 21r28 23r32 25r77 26r73 28r24 39r37 40r35
-. 12|3r30 8r29 13r28 18r32 26r77 27r12 34r73 35r12 45r24 57r37 62r35
+9k9*P_Image 5z8 6z17 7z17 33E8 44l5 44e12 12|1b14 48r5 53r5 72l5 72t12
+11K11*P_Pixel_Init[13|6] 12r7 12|48r24 53r24
+14R8*T_Image 15r26 36c8 39e13 12|27r27
+15P8*A_image(14R8) 18r30 19r29 21r28 23r32 25r77 26r24 26r40 28r24 30r35
+. 41r37 42r35 12|3r30 8r29 13r28 18r32 26r77 27r12 34r24 46r37 51r35 56r35
+. 61r24 61r40 62r19
 16X3*Falsche_Format
-18V12*getHeight{natural} 18>22 12|3b12 6l7 6t16
+18V12*getHeight{natural} 18>22 12|3b12 6l7 6t16 62s52
 18p22 image{15P8} 12|3b22 5r12
-19V12*getWidth{natural} 19>21 12|8b12 11l7 11t15
+19V12*getWidth{natural} 19>21 12|8b12 11l7 11t15 62s35
 19p21 image{15P8} 12|8b21 10r12
-21V12*getPixel{13|9P8[11]} 21>21 21>37 21>48 12|13b12 16l7 16t15
+21V12*getPixel{13|9P8[11]} 21>21 21>37 21>48 12|13b12 16l7 16t15 66s42
 21p21 image{15P8} 12|13b21 15r12
 21i37 x{natural} 12|13b37 15r33
 21i48 y{natural} 12|13b48 15r35
-23U13*setPixel 23>22 23>41 23>56 23>71 12|18b13 24l7 24t15
+23U13*setPixel 23>22 23>41 23>56 23>71 12|18b13 24l7 24t15 66s9
 23p22 image{15P8} 12|18b22 20r30 23r5
 23i41 x{natural} 12|18b41 23r26
 23i56 y{natural} 12|18b56 23r28
 23p71 pixel{13|9P8[11]} 12|18b71 20r20 23r34
-25V12*init{15P8} 25>17 25>33 25>50 12|26b12 32l7 32t11 35s23
+25V12*init{15P8} 25>17 25>33 25>50 12|26b12 32l7 32t11 62s30
 25i17 width{natural} 12|26b17 29r46
 25i33 height{natural} 12|26b33 29r58
 25i50 Nb_canaux{natural} 12|26b50 30r28
-26V12*init{15P8} 26>17 26>33 26>50 12|34b12 43l7 43t11
-26i17 width{natural} 12|34b17 35r28
-26i33 height{natural} 12|34b33 35r35
-26p50 pixel{13|9P8[11]} 12|34b50 35r55 39r39
-28U13*act 28>17 28^33 28^92 12|45b13 55l7 55t10 59s13 64s13
-28p17 image{15P8} 12|45b17 47r14 48r16 49r29
-28p33 what_to_do_on_pixel 12|45b33 49r9
+26V12*init{15P8} 26>17 12|61b12 70l7 70t11
+26p17 image{15P8} 12|61b17 62r44 62r62 62r70 64r14 65r16 66r51
+28U13*act 28>17 28^33 28^92 12|34b13 44l7 44t10 48s13 53s13
+28p17 image{15P8} 12|34b17 36r14 37r16 38r29
+28p33 what_to_do_on_pixel 12|34b33 38r9
 28p72 pixel{13|9P8[11]}
-28p92 what_to_do_on_line 12|45b92 51r10 52r9
-31A8 T_Image_Array(13|9P8[11])<integer><integer> 32r32 12|29r29
-32P8 A_Image_Array(31A8) 35r14
-35p5 pixels{32P8} 12|5r22 10r22 15r22 23r15 29m15 37r24 38r26 39r19 47r24
-. 48r26 49r39
-36i5 Nb_canaux{natural} 12|20r40 30m15
-39U13 convert_to_YCbCr 39>30 12|57b13 60l7 60t23
-39p30 image{15P8} 12|57b30 59r17
-40U13 convert_to_RGB 40>28 12|62b13 65l7 65t21
-40p28 image{15P8} 12|62b28 64r17
+28p92 what_to_do_on_line 12|34b92 40r10 41r9
+30U13*destroy 30=21 30>44 12|56b13 59l7 59t14
+30p21 image{15P8} 12|56b21
+30b44 destroy_completly{boolean} 12|56b44
+33A8 T_Image_Array(13|9P8[11])<integer><integer> 34r32 12|29r29
+34P8 A_Image_Array(33A8) 37r14
+37p5 pixels{34P8} 12|5r22 10r22 15r22 23r15 29m15 36r24 37r26 38r39 64r24
+. 65r26
+38i5 Nb_canaux{natural} 12|20r40 30m15 62r80
+41U13 convert_to_YCbCr 41>30 12|46b13 49l7 49t23
+41p30 image{15P8} 12|46b30 48r17
+42U13 convert_to_RGB 42>28 12|51b13 54l7 54t21
+42p28 image{15P8} 12|51b28 53r17
 X 12 p_image.adb
 27p5 image{11|15P8} 29r5 30r5 31r12
-35p5 image{11|15P8} 37r14 38r16 39r9 42r12
-37i9 x{integer} 39r30
-38i11 y{integer} 39r33
-45p72 pixel{13|9P8[11|11]}
-47i9 x{integer} 49r50
-48i11 y{integer} 49r53
+34p72 pixel{13|9P8[11|11]}
+36i9 x{integer} 38r50
+37i11 y{integer} 38r53
+62p5 image_copie{11|15P8} 66r18 69r12
+64i9 x{integer} 66r31 66r58
+65i11 y{integer} 66r34 66r61
 X 13 p_pixel.ads
 6k9*P_Pixel 11|1w19 11r31 13|37e12
 8R8 T_Pixel
-9P8 A_Pixel(8R8[11|11]) 11|21r67[11] 23r81[11] 26r57[11] 28r82[11] 31r71[11]
-. 12|13r67[11|11] 18r81[11|11] 34r57[11|11] 45r82[11|11]
-23U13 convert_to_YCbCr 12|59r37[11|11]
-24U13 convert_to_RGB 12|64r37[11|11]
-26V12 getNbCanaux{natural} 12|20s8[11|11] 35s43[11|11]
+9P8 A_Pixel(8R8[11|11]) 11|21r67[11] 23r81[11] 28r82[11] 33r71[11] 12|13r67[11|11]
+. 18r81[11|11] 34r82[11|11]
+18V12 init{9P8[11|11]} 12|66s37[11|11]
+23U13 convert_to_YCbCr 12|48r37[11|11]
+24U13 convert_to_RGB 12|53r37[11|11]
+26V12 getNbCanaux{natural} 12|20s8[11|11]
 29X3 Canal_Invalide 12|21r13[11|11]
 

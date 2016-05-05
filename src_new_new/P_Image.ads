@@ -23,9 +23,11 @@ Package P_Image is
   procedure setPixel(image: in A_image; x: in Natural; y: in Natural; pixel: in A_Pixel);
 
   function init(width: Natural; height: Natural; Nb_canaux: Natural) return A_Image;
-  function init(width: Natural; height: Natural; pixel: A_pixel) return A_Image;
+  function init(image: A_Image) return A_Image;
 
   procedure act(image: A_Image; what_to_do_on_pixel: access procedure (pixel: in A_Pixel); what_to_do_on_line: access procedure);
+
+  procedure destroy(image: in out A_Image; destroy_completly : Boolean := TRUE);
 
   private
   type T_Image_Array is array (natural range <>, natural range <>) of A_Pixel;

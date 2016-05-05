@@ -1,3 +1,5 @@
+with Ada.Numerics,Ada.Numerics.Elementary_Functions;
+use Ada.Numerics,Ada.Numerics.Elementary_Functions;
 generic
   type element is private;
 
@@ -10,4 +12,5 @@ package P_Image.Compression is
   Taille_Bloc : constant Natural := 2;
   type T_Blocks is array (natural range <>, natural range <>) of A_Image;
   function decoupage_en_bloc(image: A_Image) return A_Blocks;
+  procedure dct(blocks: A_Blocks);
 end P_Image.Compression;

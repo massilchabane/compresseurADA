@@ -15,7 +15,7 @@ package P_Pixel is
   not_YCbCr : Exception;
 
   function init(elements : T_Pixel_Array) return A_Pixel;
-
+  function init(pixel: A_Pixel) return A_Pixel;
 
   function get(pixel : A_Pixel; Canal: natural) return element;
   procedure set(pixel : A_Pixel; Canal: natural; e: element);
