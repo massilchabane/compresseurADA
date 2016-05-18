@@ -1,0 +1,220 @@
+V "GNAT Lib v2014"
+P SS ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_FLOATING_POINT
+RV NO_IO
+RV NO_IMPLICIT_LOOPS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV SPARK_05
+
+U p_image.compression%b	p_image-compression.adb	01a66f13 NE OO PK
+W ada.tags%s		a-tags.adb		a-tags.ali
+W p_image%s		p_image.adb		p_image.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+U p_image.compression%s	p_image-compression.ads	99dcdd89 EE NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.elementary_functions%s  a-nuelfu.ads  a-nuelfu.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W p_image%s		p_image.adb		p_image.ali
+W p_pixel%s		p_pixel.adb		p_pixel.ali
+
+D ada.ads		20140406181354 3ffc8e18 ada%s
+D a-except.ads		20140406181356 43d57f8c ada.exceptions%s
+D a-finali.ads		20140406181359 69f99942 ada.finalization%s
+D a-ioexce.ads		20140406181358 e4a01f64 ada.io_exceptions%s
+D a-numeri.ads		20140406181358 bb51c45a ada.numerics%s
+D a-nuelfu.ads		20140406181356 03e83d1c ada.numerics.elementary_functions%s
+D a-ngelfu.ads		20140406181358 ff061ca9 ada.numerics.generic_elementary_functions%s
+D a-stream.ads		20140406181355 1a984740 ada.streams%s
+D a-tags.ads		20140406181357 dc4d0634 ada.tags%s
+D a-textio.ads		20140406181359 386df5d4 ada.text_io%s
+D a-unccon.ads		20140406181359 f9eb8f06 ada.unchecked_conversion%s
+D interfac.ads		20140406181359 69adb1b9 interfaces%s
+D i-cstrea.ads		20140406181357 febc86ed interfaces.c_streams%s
+D p_image.ads		20160516115030 57b50729 p_image%s
+D p_image-compression.ads  20160513120100 000c1829 p_image.compression%s
+D p_image-compression.adb  20160518184406 01aa773a p_image.compression%b
+D p_pixel.ads		20160516115120 4eb1ce1b p_pixel%s
+D system.ads		20140406181354 f2f2d889 system%s
+D s-crtl.ads		20140406181356 2c012597 system.crtl%s
+D s-exctab.ads		20140406181354 54135002 system.exception_table%s
+D s-ficobl.ads		20140406181355 078245e4 system.file_control_block%s
+D s-finmas.ads		20140406181356 814daec4 system.finalization_masters%s
+D s-finroo.ads		20140406181359 4ff27390 system.finalization_root%s
+D s-parame.ads		20140406181358 06da98b2 system.parameters%s
+D s-pooglo.ads		20140406181357 542f33d0 system.pool_global%s
+D s-secsta.ads		20140406181359 86a2856d system.secondary_stack%s
+D s-soflin.ads		20140406181358 aa763b52 system.soft_links%s
+D s-stache.ads		20140406181355 a37c21ec system.stack_checking%s
+D s-stalib.ads		20140406181355 fa0a3617 system.standard_library%s
+D s-stoele.ads		20140406181357 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20140406181355 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20140406181357 b16154c2 system.storage_pools%s
+D s-traent.ads		20140406181355 b5116092 system.traceback_entries%s
+D s-unstyp.ads		20140406181356 510692af system.unsigned_types%s
+D s-wchcon.ads		20140406181358 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 19e8 15|3r6 3r23 4r6 4r19 5r5 5r18 16|119r48
+X 5 a-numeri.ads
+16K13*Numerics 32e17 15|4w10 4r23 5r9 5r22 16|119r52
+21N4*Pi 16|119r61
+X 6 a-nuelfu.ads
+18K22*Elementary_Functions[7|39] 15|4w32 5r31
+X 7 a-ngelfu.ads
+42V13*Sqrt{float} 16|111s21[6|18]
+72V13*Cos{float} 16|119s15[6|18]
+X 10 a-textio.ads
+49K13*Text_IO 471e16 15|3w10 3r27
+X 14 p_image.ads
+4K9*p_image 36e12 15|7r9 13r5 16|1r14 233r5
+5P8*A_Image 15|8r36 8r52 9r38 9r54 12r65 16|7r25 20r26 20r77 21r19 38r26
+. 38r42 44r35 76r52 77r14 122r43 135r43 140r27 141r21 160r37 160r53 161r19
+. 164r25 165r31 182r49 195r49 200r33 201r19 221r39 221r55 222r19 224r27 225r33
+7V12*get{17|2P8} 16|28s46 52s37 68s41 87s44 128s29 145s16 188s42 205s22
+10V12*getWidth{natural} 16|25s18 27s17 40s25 45s28 77s30 83s23 85s32 143s20
+. 162s28 203s18 223s28
+11V12*getHeight{natural} 16|26s20 27s42 40s42 45s64 77s70 84s25 86s32 144s22
+. 162s64 204s20 223s69
+18U13*set 16|28s12 30s12 52s14 68s14 87s15
+20V12*init{5P8} 16|21s30 49s25 65s29 77s25
+21U13*destroy 16|148s8 171s6 172s6 208s6
+24P8 A_String(string)
+30e5*category{17|3E8} 16|8r45 10r19 21r60 22r45 49r66 65r80 77r127
+31i5*max{integer} 16|8r65 21r80 22r65 49r86 65r106 77r153
+32p5*name{24P8} 16|173m23 173r37 229m32 229r46
+33b5*compressed{boolean} 16|174m23
+X 15 p_image-compression.ads
+7K17*Compression 14|4k9 15|11E3 13l13 13e24 16|1b22 233l13 233t24
+8V12*compress{14|5P8} 8=21 16|160b13 176l8 176t16
+8p21 image{14|5P8} 16|160b22 161r35 162r37 162r74 173r31
+9V12*decompress{14|5P8} 9=23 16|221b13 231l8 231t18
+9p23 image{14|5P8} 16|221b24 222r35 229r40
+11i3 Taille_Bloc{natural} 16|45r44 45r81 49r30 49r43 50r22 51r24 52r49 52r65
+. 65r34 65r49 66r22 67r24 119r76 126r20 127r22 131r31 162r44 162r81 186r18
+. 187r20 191r29 222r42 222r55 223r49 223r91
+12A8 T_Blocks(14|5P8)<integer><integer> 16|44r51 45r15 60r33 60r50 61r19
+. 76r35 97r31 151r28 162r15 163r19 211r34 223r15
+X 16 p_image-compression.adb
+7V13 copy{17|2P8} 7b13 7>18 7>34 18l8 18t12 28s34
+7p18 image{14|5P8} 8r35 8r55 10r9
+7p34 pixel{17|2P8} 11r32 12r34 13r33 15r30
+8p6 pixel_copy{17|2P8} 11r12 12r12 13r12 15r12 17r13
+20V13 copy{14|5P8} 20b13 20>18 20>35 20>52 36l8 36t12 40s13 222s30
+20p18 image{14|5P8} 21r50 21r70 22r35 22r55 27r26 27r52 28r39 28r50
+20i35 width{natural} 21r35
+20i52 height{natural} 21r42
+21p6 image_copy{14|5P8} 25r27 26r30 28r16 30r16 35r13
+22p6 void_pixel{17|2P8} 30r34
+25i10 x{integer} 27r13 28r28 28r57 30r28
+26i12 y{integer} 27r38 28r31 28r60 30r31
+38V13 copy{14|5P8} 38b13 38>18 41l8 41t12 141s32 161s30 168s33 201s30 228s35
+38p18 image{14|5P8} 40r18 40r34 40r52
+44V13 cut_in_blocks{15|12A8} 44b13 44>27 58l8 58t21 162s100 223s110
+44p27 image{14|5P8} 45r37 45r74 49r56 49r76 52r41
+45a6 blocks{15|12A8} 47r15 48r17 49m10 52r18 57r13
+47i10 i{integer} 49r17 52r25 52r61
+48i12 j{integer} 49r19 52r27 52r77
+50i14 x{integer} 52r31 52r47
+51i16 y{integer} 52r34 52r63
+60V13 cut_blocks{15|12A8} 60b13 60>24 74l8 74t18 163s65
+60a24 blocks{15|12A8} 61r28 61r45 63r15 64r17 65r64 65r90 68r45
+61a6 blocks_cut{15|12A8} 65m10 68r18 73r13
+63i10 i{integer} 65r21 65r71 65r97 68r29 68r52
+64i12 j{integer} 65r23 65r73 65r99 68r31 68r54
+66i14 x{integer} 68r35 68r57
+67i16 y{integer} 68r38 68r59
+76V13 merge_blocks{14|5P8} 76b13 76>26 94l8 94t20 164s36 224s38
+76a26 blocks{15|12A8} 77r39 77r52 77r80 77r93 77r111 77r137 81r15 82r17 83r32
+. 84r35 85r41 86r42 87r48
+77p6 image{14|5P8} 87r19 93r13
+78i6 index_x{integer} 85m15 87r26
+79i6 index_y{integer} 86m15 87r35
+81i10 i{integer} 83r39 84r42 85r29 87r55
+82i12 j{integer} 83r41 84r44 86r29 87r57
+83i15 x{integer} 85r26 87r61
+84i17 y{integer} 86r26 87r64
+97U14 destroy 97b14 97>22 106l8 106t15
+97a22 blocks{15|12A8} 99r15 100r17
+99i10 i{integer}
+100i12 j{integer}
+108V15 c{float} 108b15 108>17 115l10 115t11 131s46 131s53 188s18 188s25
+108i17 x{integer} 110r11
+117V15 cos_dct{float} 117b15 117>23 117>35 120l10 120t17 128s57 128s72 188s70
+. 188s85
+117i23 a{integer} 119r31
+117i35 b{integer} 119r45
+122U16 dct 122b16 122>20 122>36 122>52 122>64 122>76 133l10 133t13 137s8
+122p20 pixel{17|2P8} 132r12
+122p36 image{14|5P8} 128r33
+122i52 i{natural} 128r67 131r48
+122i64 j{natural} 128r83 131r55
+122i76 canal{natural} 128r47 132r19
+123i8 e{integer} 131m8 132r26
+124f8 sum{float} 128m12 128r88 131r60
+126i12 x{integer} 128r40 128r65
+127i14 y{integer} 128r43 128r80
+135U16 dct 135b16 135>20 135>36 135>52 135>64 138l10 138t13 145s12
+135p20 pixel{17|2P8} 137r12
+135p36 image{14|5P8} 137r19
+135i52 x{natural} 137r26
+135i64 y{natural} 137r29
+140U16 dct 140b16 140>20 149l10 149t13 155s12
+140p20 image{14|5P8} 141r37 143r29 144r32 145r20
+141p8 image_copy{14|5P8} 145r34 148m16 148r16
+143i12 x{integer} 145r27 145r46
+144i14 y{integer} 145r30 145r49
+151U16 dct 151b16 151>20 158l10 158t13 167s6
+151a20 blocks{15|12A8} 153r17 154r19 155r16
+153i12 i{integer} 155r23
+154i14 j{integer} 155r26
+161p6 image_copy{14|5P8} 162r114 172m14 172r14
+162a6 blocks{15|12A8} 163r28 163r45 163r76 167r10
+163a6 blocks_cut{15|12A8} 164r49
+164p6 compressed_image{14|5P8} 168r38 171m14 171r14 173r6 174r6 175r13
+165p6 safely_compressed_image{14|5P8} 168m6
+182U14 dct_inverse 182b14 182>26 182>42 182>58 182>70 182>82 193l8 193t19
+. 197s6
+182p26 pixel{17|2P8} 192r10
+182p42 image{14|5P8} 188r46
+182i58 i{natural} 188r20 188r53 188r80
+182i70 j{natural} 188r27 188r56 188r96
+182i82 canal{natural} 188r60 192r17
+183i6 e{integer} 191m6 192r24
+184f6 sum{float} 188m10 188r101 191r44
+186i10 x{integer} 188r78
+187i12 y{integer} 188r93
+195U14 dct_inverse 195b14 195>26 195>42 195>58 195>70 198l8 198t19 205s10
+195p26 pixel{17|2P8} 197r18
+195p42 image{14|5P8} 197r25
+195i58 x{natural} 197r32
+195i70 y{natural} 197r35
+200U14 dct_inverse 200b14 200>26 209l8 209t19 215s10
+200p26 image{14|5P8} 201r35 203r27 204r30 205r26
+201p6 image_copy{14|5P8} 205r40 208m14 208r14
+203i10 x{integer} 205r33 205r52
+204i12 y{integer} 205r36 205r55
+211U14 dct_inverse 211b14 211>26 218l8 218t19 227s6
+211a26 blocks{15|12A8} 213r15 214r17 215r22
+213i10 i{integer} 215r29
+214i12 j{integer} 215r32
+222p6 image_copy{14|5P8} 223r37 223r79 223r124
+223a6 blocks{15|12A8} 224r51 227r18
+224p6 decompressed_image{14|5P8} 228r40
+225p6 safely_decompressed_image{14|5P8} 228m6 229r6 230r13
+X 17 p_pixel.ads
+1K9*P_Pixel 15|1w6 2r5 17|26e12
+2P8*A_Pixel 16|7r42 7r58 8r19 22r19 122r27 135r27 182r33 195r33
+3n34*P3{3E8} 16|10r30
+6i3*Red{integer} 16|11r24 11r39
+7i3*Green{integer} 16|12r24 12r41
+8i3*Blue{integer} 16|13r24 13r40
+10V12*get{integer} 16|11s28 12s30 13s29 15s26 128s25 188s38
+11U13*set 16|11s8 12s8 13s8 15s8 132s8 192s6
+13V12*init{2P8} 16|8s30 22s30
+

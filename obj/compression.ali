@@ -1,0 +1,90 @@
+V "GNAT Lib v2014"
+M P W=b
+P SS ZX
+
+RN
+RV NO_IO
+RV NO_SECONDARY_STACK
+RV NO_DEFAULT_INITIALIZATION
+RV SPARK_05
+
+U compression%b		compression.adb		b7b48004 NE OO SU IL
+W ada%s			ada.ads			ada.ali
+W ada.command_line%s	a-comlin.adb		a-comlin.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W p_image%s		p_image.adb		p_image.ali
+W p_image.compression%s	p_image-compression.adb	p_image-compression.ali
+W p_image.file%s	p_image-file.adb	p_image-file.ali
+W p_pixel%s		p_pixel.adb		p_pixel.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+D ada.ads		20140406181354 3ffc8e18 ada%s
+D a-comlin.ads		20140406181358 ea62afbc ada.command_line%s
+D a-except.ads		20140406181356 43d57f8c ada.exceptions%s
+D a-finali.ads		20140406181359 69f99942 ada.finalization%s
+D a-inteio.ads		20140406181359 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20140406181358 e4a01f64 ada.io_exceptions%s
+D a-numeri.ads		20140406181358 bb51c45a ada.numerics%s
+D a-nuelfu.ads		20140406181356 03e83d1c ada.numerics.elementary_functions%s
+D a-ngelfu.ads		20140406181358 ff061ca9 ada.numerics.generic_elementary_functions%s
+D a-stream.ads		20140406181355 1a984740 ada.streams%s
+D a-tags.ads		20140406181357 dc4d0634 ada.tags%s
+D a-textio.ads		20140406181359 386df5d4 ada.text_io%s
+D a-tiinio.ads		20140406181359 aa04e5d6 ada.text_io.integer_io%s
+D a-unccon.ads		20140406181359 f9eb8f06 ada.unchecked_conversion%s
+D compression.adb	20160518183838 10df7d7b compression%b
+D interfac.ads		20140406181359 69adb1b9 interfaces%s
+D i-cstrea.ads		20140406181357 febc86ed interfaces.c_streams%s
+D p_image.ads		20160516115030 57b50729 p_image%s
+D p_image-compression.ads  20160513120100 000c1829 p_image.compression%s
+D p_image-file.ads	20160512143816 9a27ffa8 p_image.file%s
+D p_pixel.ads		20160516115120 4eb1ce1b p_pixel%s
+D system.ads		20140406181354 f2f2d889 system%s
+D s-crtl.ads		20140406181356 2c012597 system.crtl%s
+D s-exctab.ads		20140406181354 54135002 system.exception_table%s
+D s-ficobl.ads		20140406181355 078245e4 system.file_control_block%s
+D s-finmas.ads		20140406181356 814daec4 system.finalization_masters%s
+D s-finroo.ads		20140406181359 4ff27390 system.finalization_root%s
+D s-parame.ads		20140406181358 06da98b2 system.parameters%s
+D s-pooglo.ads		20140406181357 542f33d0 system.pool_global%s
+D s-secsta.ads		20140406181359 86a2856d system.secondary_stack%s
+D s-soflin.ads		20140406181358 aa763b52 system.soft_links%s
+D s-stache.ads		20140406181355 a37c21ec system.stack_checking%s
+D s-stalib.ads		20140406181355 fa0a3617 system.standard_library%s
+D s-stoele.ads		20140406181357 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20140406181355 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20140406181357 b16154c2 system.storage_pools%s
+D s-traent.ads		20140406181355 b5116092 system.traceback_entries%s
+D s-unstyp.ads		20140406181356 510692af system.unsigned_types%s
+D s-wchcon.ads		20140406181358 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 19e8 15|1r59 1r72 2r58 2r71 3r6 5r23
+X 2 a-comlin.ads
+38K13*Command_Line 139e21 15|3w10 5r27
+41V13*Argument_Count{natural} 15|9s8 12s11
+48V13*Argument{string} 15|13s21
+X 5 a-inteio.ads
+18K13*Integer_Text_IO[13|46] 15|1w76 2r75
+X 12 a-textio.ads
+49K13*Text_IO 471e16 15|1w63 2r62
+263U14*Put_Line 15|10s3 18s3 20s3
+X 15 compression.adb
+4U11*compression 4b11 22l5 22t16
+5K11 CLI=5:27 9r4 12r7 13r17
+6p3 image{18|5P8} 13m3 14m32 14r32 16m11 16r11
+7p3 compressed_image{18|5P8} 14m3 15r9 17m11 17r11
+X 18 p_image.ads
+4K9*p_image 15|1w6 1r24 1r38 2r5 2r23 2r37 18|36e12
+5P8*A_Image 15|6r11 7r22
+21U13*destroy 15|16s3 17s3
+X 19 p_image-compression.ads
+7K17*Compression 15|1w46 2r45 19|13e24
+8V12*compress{18|5P8} 15|14s23
+X 20 p_image-file.ads
+2K17*File 15|1w32 2r31 20|12e17
+5V12*open{18|5P8} 15|13s12
+6U13*write 15|15s3
+X 21 p_pixel.ads
+1K9*P_Pixel 15|1w15 2r14 21|26e12
+

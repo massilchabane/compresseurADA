@@ -1,80 +1,102 @@
-package body P_Image is
+package body p_image is
 
-  function getHeight(image : A_Image) return Natural is
-  begin
-    return image.all'length(2);
-  end getHeight;
+   ---------
+   -- get --
+   ---------
 
-  function getWidth(image : A_Image) return Natural is
-  begin
-    return image.all'length(1);
-  end getWidth;
+   function get (image: A_Image; x: Natural; y: Natural) return A_Pixel is
+   begin
+     return image.all.pixels.all(x, y);
+   end get;
 
-  function getPixel(image: T_image; x:Natural; y: Natural) return T_pixel is
-    pixel : T_Pixel := image(x,y);
-  begin
-    return pixel;
-  end getPixel;
+   ---------
+   -- get --
+   ---------
 
+   function get
+     (image: A_Image;
+      x: Natural;
+      y: Natural;
+      width: Natural;
+      height: Natural)
+      return A_Image
+   is
+     new_image : A_Image := init(width, height, P1, 0);
+   begin
+     return new_image;
+   end get;
 
-  function getPixel(image: A_image; x:Natural; y: Natural) return T_pixel is
-  begin
-    return getPixel(image.all, x, y);
-  end getPixel;
+   ---------
+   -- set --
+   ---------
 
+   procedure set
+     (image: in A_Image;
+      x: in Natural;
+      y: in Natural;
+      pixel: in A_Pixel)
+   is
+   begin
+     image.all.pixels.all(x, y) := pixel;
+   end set;
 
-  function getPartOfImage(image: A_image; x:Natural; y: Natural; width: Natural; height: Natural) return A_Image is
-    part : A_Image := new T_image(0..width-1, 0..height-1);
-  begin
-    for i in 0..width-1 loop
-      for j in 0..height-1 loop
-        part.all(i,j) := getPixel(image, x+i, y+j);
-      end loop;
-    end loop;
-    return part;
-  end getPartOfImage;
+   ----------
+   -- init --
+   ----------
 
-
-  function init(width: Natural; height: natural) return A_Image is
-    image: A_image := new T_Image(0..width-1, 0..height-1);
-  begin
+   function init
+     (width: Natural;
+      height: Natural;
+      category: T_Magic_Token;
+      max : Natural := 1)
+      return A_Image
+   is
+     image : A_Image := new T_Image;
+   begin
+     image.all.category := category;
+     if category = P1 then
+       image.all.max := 1;
+     elsif category = P2 then
+       image.all.max := max;
+     else
+       image.all.max := max;
+    end if;
+    image.all.pixels := new T_Image_Array(0..width-1, 0..height-1);
     return image;
-  end init;
+   end init;
 
-  function init(width: Natural; height: Natural; pixel: T_pixel) return A_Image is
-    image: A_image := init(width, height);
-  begin
-    for x in image'range(1) loop
-      for y in image'range(2) loop
-        image.all(x, y) := pixel;
-      end loop;
-    end loop;
-    return image;
-  end init;
+   -------------
+   -- destroy --
+   -------------
 
-  procedure afficher(image : in T_Image) is
-  begin
-    for x in image'range(1) loop
-      for y in image'range(2) loop
-        afficher(image(x,y));
-      end loop;
-      new_line;
-    end loop;
-  end afficher;
+   procedure destroy
+     (image: in out A_Image;
+      destroy_completly : Boolean := TRUE)
+   is
+   begin
+     null;
+   end destroy;
 
-  procedure afficher(image : in A_Image) is
-  begin
-    afficher(image.all);
-  end afficher;
 
-  procedure setPixel(image: in out T_image; x: in Natural; y: in Natural; pixel : in T_Pixel) is
-  begin
-    image(x, y) := pixel;
-  end setPixel;
+   function getWidth(image: A_Image) return natural is
+   begin
+     return image.all.pixels'length(1);
+   end getWidth;
 
-  procedure setPixel(image: in A_image; x: in Natural; y: in Natural; pixel: in T_Pixel) is
-  begin
-    setPixel(image.all, x, y, pixel);
-  end setPixel;
+   function getHeight(image: A_Image) return natural is
+   begin
+     return image.all.pixels'length(2);
+   end getHeight;
 
-end P_Image;
+   function getCategory(image: A_Image) return T_Magic_Token is
+   begin
+     return image.all.category;
+   end getCategory;
+
+   function getMax(image: A_Image) return Natural is
+   begin
+     return image.all.max;
+   end getMax;
+
+
+end p_image;

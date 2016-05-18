@@ -1,0 +1,144 @@
+V "GNAT Lib v2014"
+P ZX
+
+RN
+RV NO_ALLOCATORS
+RV NO_FLOATING_POINT
+RV NO_IO
+RV NO_LOCAL_ALLOCATORS
+RV NO_RECURSION
+RV NO_STANDARD_STORAGE_POOLS
+RV SPARK_05
+
+U p_image.compressionn%b  p_image-compressionn.adb  b83c62d2 NE OO PK GE
+W p_image%s		p_image.adb		p_image.ali
+
+U p_image.compressionn%s  p_image-compressionn.ads  dafeea41 BN EE NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.elementary_functions%s  a-nuelfu.ads  a-nuelfu.ali
+W p_image%s		p_image.adb		p_image.ali
+
+D ada.ads		20140406181354 3ffc8e18 ada%s
+D a-except.ads		20140406181356 43d57f8c ada.exceptions%s
+D a-finali.ads		20140406181359 69f99942 ada.finalization%s
+D a-ioexce.ads		20140406181358 e4a01f64 ada.io_exceptions%s
+D a-numeri.ads		20140406181358 bb51c45a ada.numerics%s
+D a-nuelfu.ads		20140406181356 03e83d1c ada.numerics.elementary_functions%s
+D a-ngelfu.ads		20140406181358 ff061ca9 ada.numerics.generic_elementary_functions%s
+D a-stream.ads		20140406181355 1a984740 ada.streams%s
+D a-tags.ads		20140406181357 dc4d0634 ada.tags%s
+D a-textio.ads		20140406181359 386df5d4 ada.text_io%s
+D a-unccon.ads		20140406181359 f9eb8f06 ada.unchecked_conversion%s
+D interfac.ads		20140406181359 69adb1b9 interfaces%s
+D i-cstrea.ads		20140406181357 febc86ed interfaces.c_streams%s
+D p_image.ads		20160505163404 8e84257a p_image%s
+D p_image-compressionn.ads  20160505194752 ecc3367d p_image.compressionn%s
+D p_image-compressionn.adb  20160505194747 54ff54af p_image.compressionn%b
+D p_pixel.ads		20160505170112 644982c7 p_pixel%s
+D system.ads		20140406181354 f2f2d889 system%s
+D s-crtl.ads		20140406181356 2c012597 system.crtl%s
+D s-exctab.ads		20140406181354 54135002 system.exception_table%s
+D s-ficobl.ads		20140406181355 078245e4 system.file_control_block%s
+D s-finmas.ads		20140406181356 814daec4 system.finalization_masters%s
+D s-finroo.ads		20140406181359 4ff27390 system.finalization_root%s
+D s-parame.ads		20140406181358 06da98b2 system.parameters%s
+D s-pooglo.ads		20140406181357 542f33d0 system.pool_global%s
+D s-soflin.ads		20140406181358 aa763b52 system.soft_links%s
+D s-stache.ads		20140406181355 a37c21ec system.stack_checking%s
+D s-stalib.ads		20140406181355 fa0a3617 system.standard_library%s
+D s-stoele.ads		20140406181357 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20140406181355 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20140406181357 b16154c2 system.storage_pools%s
+D s-traent.ads		20140406181355 b5116092 system.traceback_entries%s
+D s-unstyp.ads		20140406181356 510692af system.unsigned_types%s
+D s-wchcon.ads		20140406181358 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 19e8 15|1r6 1r19 2r5 2r18 16|56r45
+X 5 a-numeri.ads
+16K13*Numerics 32e17 15|1w10 1r23 2r9 2r22 16|56r49
+21N4*Pi 16|56r58
+X 6 a-nuelfu.ads
+18K22*Elementary_Functions[7|39] 15|1w32 2r31
+X 7 a-ngelfu.ads
+42V13*Sqrt{float} 16|48s18[6|18]
+72V13*Cos{float} 16|56s12[6|18]
+X 14 p_image.ads
+5+8 element 16|60r17
+6V17 to_float{float} 16|65s16 66s26 69s60
+7V17 to_element{5+8} 16|60s28 66s14 69s10
+9k9*P_Image 44e12 15|6r9 16r5 16|1r14 60r9 101r5
+15P8*A_image(14R8) 15|9r31 9r47 10r33 10r49 13r66 14r37 16|3r31 3r47 4r19
+. 12r33 12r49 18r33 36r37 59r40 74r40 81r24 82r19
+18V12*getHeight{natural} 16|20s13 38s25 85s19
+19V12*getWidth{natural} 16|23s13 37s24 84s17
+21V12*getPixel{17|9P8[11]} 16|30s68 65s29 86s13
+23U13*setPixel 16|30s9
+25V12*init{15P8} 16|27s48
+26V12*init{15P8} 16|4s30 82s30
+30U13*destroy 16|89s5
+41U13 convert_to_YCbCr 16|7s5
+42U13 convert_to_RGB 16|14s5
+X 15 p_image-compressionn.ads
+4+8 element
+6k17 Compressionn 14|9k9 15|4z8 12E3 16l13 16e25 16|1b22 101l13 101t25
+7A8*T_Blocks 8r27 13c8 16|39r29
+8P8*A_Blocks(7A8) 14r53 15r25 16|5r13 18r83 36r53 39r13 92r25
+9V12*compression{14|15P8} 9>24 16|3b12 10l7 10t18
+9p24 image{14|15P8} 16|3b24 4r35
+10V12*decompression{14|15P8} 10>26 16|12b12 16l7 16t20
+10p26 image{14|15P8} 16|12b26 14r20 15r12
+12i3 Taille_Bloc{natural} 16|24r29 27r17 27r32 27r53 27r66 28r19 29r21 30r30
+. 30r45 33r24 37r40 38r42 56r73 63r17 64r19 69r31
+14V12 decoupage_en_bloc{8P8} 14>30 16|5s25 36b12 43l7 43t24
+14p30 image{14|15P8} 16|36b30 37r33 38r35 41r15
+15U13 dct 15>17 16|8s5 92b13 99l7 99t10
+15p17 blocks{8P8} 16|92b17 94r14 95r16 96r13
+X 16 p_image-compressionn.adb
+4p5 image_copie{14|15P8} 5r43 7r22 9r12
+5p5 blocs{15|8P8} 8r9
+18U13 decoupage 18b13 18>23 18>42 18>57 18>72 24s7 33s5 34l7 34t16 41s5
+18p23 image{14|15P8} 20r23 23r22 24r17 30r77 33r15
+18i42 x{natural} 23r8 27r15 28r14 28r17 30r28 30r60 30r84 33r22
+18i57 y{natural} 20r8 24r27 27r30 29r16 29r19 30r43 30r65 30r87 33r37
+18p72 blocs{15|8P8} 24r42 27r5 30r18 33r40
+28i9 i{integer} 30r58
+29i11 j{integer} 30r63
+37i5 width{natural} 39r41
+38i5 height{natural} 39r53
+39p5 blocs{15|8P8} 41r28 42r12
+45V12 c{float} 45b12 45>14 52l7 52t8 69s46 69s53
+45i14 x{natural} 47r8
+54V12 cos_dct{float} 54b12 54>20 54>32 57l7 57t14 65s62 65s77
+54i20 a{natural} 56r28
+54i32 b{natural} 56r42
+59U13 dct 59b13 59>17 59>33 59>49 59>61 59>73 71l7 71t10 77s7
+59p17 pixel{17|9P8[14|11]} 70r9
+59p33 image{14|15P8} 65r38
+59i49 i{natural} 65r72 69r48
+59i61 j{natural} 65r88 69r55
+59i73 canal{natural} 65r52 70r16
+60*5 e{14|5+8} 66m9 66r35 69m5 69r69 70r23
+61f5 sum{float} 65m9 66r40
+63i9 x{integer} 65r45 65r70
+64i11 y{integer} 65r48 65r85
+74U13 dct 74b13 74>17 74>33 74>49 74>61 79l7 79t10 86s9
+74p17 pixel{17|9P8[14|11]} 76r35 77r11
+74p33 image{14|15P8} 77r18
+74i49 x{natural} 77r25
+74i61 y{natural} 77r28
+76i9 canal{integer} 77r31
+81U13 dct 81b13 81>17 90l7 90t10 96s9
+81p17 image{14|15P8} 82r35 84r26 85r29 86r22
+82p5 image_copie{14|15P8} 86r36 89m13 89r13
+84i9 x{integer} 86r29 86r49
+85i11 y{integer} 86r32 86r52
+94i9 i{integer} 96r24
+95i11 j{integer} 96r27
+X 17 p_pixel.ads
+8R8 T_Pixel
+9P8 A_Pixel(8R8[14|11]) 16|59r24[14|11] 74r24[14|11]
+20V12 get{14|5+8} 16|65s25[14|11]
+21U13 set 16|70s5[14|11]
+26V12 getNbCanaux{natural} 16|76s23[14|11]
+

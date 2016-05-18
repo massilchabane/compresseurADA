@@ -1,0 +1,159 @@
+V "GNAT Lib v2014"
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_FLOATING_POINT
+RV NO_IO
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV SPARK_05
+
+U p_image.file%b	p_image-file.adb	8732f63e NE OO PK GE
+W p_image%s		p_image.adb		p_image.ali
+
+U p_image.file%s	p_image-file.ads	0446cca9 BN EE NE OO PK GE
+W p_image%s		p_image.adb		p_image.ali
+
+D ada.ads		20140406181354 3ffc8e18 ada%s
+D a-except.ads		20140406181356 43d57f8c ada.exceptions%s
+D a-finali.ads		20140406181359 69f99942 ada.finalization%s
+D a-flteio.ads		20140406181358 e18a47a0 ada.float_text_io%s
+D a-ioexce.ads		20140406181358 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20140406181355 1a984740 ada.streams%s
+D a-tags.ads		20140406181357 dc4d0634 ada.tags%s
+D a-textio.ads		20140406181359 386df5d4 ada.text_io%s
+D a-tiflio.ads		20140406181359 56fbda09 ada.text_io.float_io%s
+D a-unccon.ads		20140406181359 f9eb8f06 ada.unchecked_conversion%s
+D interfac.ads		20140406181359 69adb1b9 interfaces%s
+D i-cstrea.ads		20140406181357 febc86ed interfaces.c_streams%s
+D p_image.ads		20160506180905 858554d4 p_image%s
+D p_image-file.ads	20160506091535 81c3987d p_image.file%s
+D p_image-file.adb	20160506182108 06f16e43 p_image.file%b
+D p_pixel.ads		20160505170112 644982c7 p_pixel%s
+D system.ads		20140406181354 f2f2d889 system%s
+D s-crtl.ads		20140406181356 2c012597 system.crtl%s
+D s-exctab.ads		20140406181354 54135002 system.exception_table%s
+D s-ficobl.ads		20140406181355 078245e4 system.file_control_block%s
+D s-finmas.ads		20140406181356 814daec4 system.finalization_masters%s
+D s-finroo.ads		20140406181359 4ff27390 system.finalization_root%s
+D s-parame.ads		20140406181358 06da98b2 system.parameters%s
+D s-pooglo.ads		20140406181357 542f33d0 system.pool_global%s
+D s-soflin.ads		20140406181358 aa763b52 system.soft_links%s
+D s-stache.ads		20140406181355 a37c21ec system.stack_checking%s
+D s-stalib.ads		20140406181355 fa0a3617 system.standard_library%s
+D s-stoele.ads		20140406181357 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20140406181355 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20140406181357 b16154c2 system.storage_pools%s
+D s-traent.ads		20140406181355 b5116092 system.traceback_entries%s
+D s-unstyp.ads		20140406181356 510692af system.unsigned_types%s
+D s-wchcon.ads		20140406181358 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 19e8 15|15r5 59r18 63r5 63r28 64r15 66r27 71r5 74r42
+X 4 a-flteio.ads
+20K13*Float_Text_IO[9|46] 15|15r9
+X 8 a-textio.ads
+49K13*Text_IO 471e16 15|59r22 63r9 63r32 64r19 66r31 71r9 74r46
+52P9*File_Type 15|3r46 8r51 13r51 19r47 26r59 33r47 44r12 59r30
+53n23*In_File{53E9} 15|63r40
+92U14*Open 15|63s17
+98U14*Close 15|71s17 74s54
+165U14*New_Line 15|38s9
+183V13*End_Of_File{boolean} 15|64s27
+207U14*Put 15|16s5
+242U14*Put 15|46s5 48s5 74s26 91s7 113s5 125s7 151s7 156s36
+253V13*Get_Line{string} 15|66s39
+259U14*Put_Line 15|5s5 10s5
+263U14*Put_Line 15|47s5
+X 9 a-tiflio.ads
+61U14*Put 15|15s23[4|20]
+X 13 p_image.ads
+5+8 element 15|13r36
+6V17 to_float{float} 15|15s33
+7V17 to_element{5+8} 15|131s36 142s32
+9k9*P_Image 49e12 14|4r9 13r5 15|1r14 13r28 178r5
+15P8*A_image(14R8) 14|7r43 8r27 11r53 15|3r31 8r36 26r31 33r32 43r27 57r43
+. 58r13 96r60 118r58 161r53
+20V12*getHeight{natural} 15|10s144 35s17 37s15 124s13
+21V12*getWidth{natural} 15|10s34 10s65 10s105 28s17 150s13
+23V12*getPixel{16|9P8[11]} 15|29s19
+25U13*setPixel 15|136s11 146s7
+27V12*init{15P8} 15|110s16
+37P8 File_Name(string)
+41i5 Nb_canaux{natural} 15|121r51 134r30 144r26
+42p5 Name{37P8} 15|47r24
+X 14 p_image-file.ads
+2+8 element
+4k17 File 13|9k9 14|2z8 11E13 13l13 13e17 15|1b22 178l13 178t17
+5X3*Bad_File 15|74r10 81r13 84r13 92r15 115r11 126r13 152r13 156r51
+7V12*open{13|15P8} 7>17 15|57b12 75l7 75t11
+7a17 Filename{string} 15|57b17 63r48 68r52
+8U13*write 8>19 15|43b13 54l7 54t12
+8p19 image{13|15P8} 15|43b19 47r14
+11U13 read_line 11>23 11=38 11=62 11=86 11>115 15|68s9 161b13 174l7 174t16
+11a23 Line{string} 15|161b23 163r8 163r13 168r23 170r27 172r23
+11p38 image{13|15P8} 15|161b38 170m33 172m29
+11i62 canaux{natural} 15|161b62 168m29 170r40
+11i86 Line_Count{natural} 15|161b86 166m5 166r19 167r8 169r11 172r36
+11a115 File_Name{string} 15|161b115 170r48
+X 15 p_image-file.adb
+3U13 write_type 3b13 3>24 3>40 6l7 6t17
+3p24 image{13|15P8}
+3p40 file{8|52P9} 5r14
+8U13 write_dimension 8b13 8>29 8>45 11l7 11t22
+8p29 image{13|15P8} 10r43 10r74 10r114 10r154
+8p45 file{8|52P9} 10r14
+13U13 write_canal 13b13 13>25 13>45 17l7 17t18 22s7
+13*25 e{13|5+8} 15r42
+13p45 file{8|52P9} 15r27 16r9
+19U13 write_pixel 19b13 19>25 19>41 24l7 24t18 29s7
+19p25 pixel{16|9P8[13|11]} 21r33 22r23
+19p41 file{8|52P9} 22r38
+21i9 canal{integer} 22r30
+26U13 write_line 26b13 26>24 26>40 26>53 31l7 31t17 36s7
+26p24 image{13|15P8} 28r26 29r28
+26i40 y{natural} 29r36
+26p53 file{8|52P9} 29r40
+28i9 x{integer} 29r34
+33U13 write_image 33b13 33>25 33>41 41l7 41t18
+33p25 image{13|15P8} 35r27 36r18 37r25
+33p41 file{8|52P9} 36r28 38r18
+35i9 y{integer} 36r25 37r10
+44p5 file{8|52P9}
+58p5 image{13|15P8} 68m25 68r25 72r12
+59p5 File{8|52P9} 63m23 63r23 64r40 66r49 71m24 71r24 74m61 74r61
+60i5 Line_Count{natural} 68m40 68r40
+61i5 canaux{natural} 68m32 68r32
+66a10 Line{string} 68r19
+78U13 read_magic_line 78b13 78>29 78<44 94l7 94t22 168s7
+78a29 Line{string} 80r8 83r8 83r13 86r10 86r15
+78i44 canaux{natural} 87m19 88m19 89m19
+96U13 read_dimension_line 96b13 96>33 96<48 96>69 96>89 116l7 116t26 170s7
+96a33 Line{string} 97r33 101r14 102r10 103r28 107r24 107r47
+96p48 image{13|15P8} 110m7
+96i69 canaux{natural} 110r27
+96a89 File_Name{string} 110r35
+97i5 previous_space{integer} 103r33 104m9 107r29
+98i5 x{natural} 103m9 109r8 110r21
+99i5 y{natural} 107m5 109r19 110r24
+101i9 i{integer} 102r15 103r51 104r27
+118U13 read_pixel_line 118b13 118>29 118=43 118>67 158l7 158t22 172s7
+118a29 Line{string} 120r33 129r14 130r10 131r59 142r55 142r78
+118p43 image{13|15P8} 121r41 124r23 134r20 136r20 144r16 146r16 150r22
+118i67 y{natural} 124r8 136r30 146r26
+119i5 x{natural} 136r27 137m11 137r15 146r23 147m7 147r11 150r8
+120i5 previous_space{integer} 131r64 132m9 142r60
+121a5 pixel_components{16|7A8[13|11]} 131m9 136r38 142m5 146r34
+122i5 canal{natural} 131r26 133m9 133r18 134r12 135m11 142r22 143m5 143r14
+. 144r8 145m7
+129i9 i{integer} 130r15 131r82 132r27
+X 16 p_pixel.ads
+7A8 T_Pixel_Array(13|5+8)<integer> 15|121r24[13|11]
+8R8 T_Pixel
+9P8 A_Pixel(8R8[13|11]) 15|19r32[13|11]
+17V12 init{9P8[13|11]} 15|136s33[13|11] 146s29[13|11]
+20V12 get{13|5+8} 15|22s19[13|11]
+26V12 getNbCanaux{natural} 15|21s21[13|11]
+

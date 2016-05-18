@@ -2,40 +2,75 @@ V "GNAT Lib v2014"
 P ZX
 
 RN
-RV NO_DIRECT_BOOLEAN_OPERATORS
-RV NO_EXCEPTIONS
+RV NO_ALLOCATORS
+RV NO_IMPLICIT_LOOPS
+RV NO_LOCAL_ALLOCATORS
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
 RV SPARK_05
 
-U p_image%b		p_image.adb		eba82e66 NE OO PK GE
+U p_image%b		p_image.adb		ec2a0886 NE OO PK IL
+W interfaces%s		interfac.ads		interfac.ali
 
-U p_image%s		p_image.ads		8e26687d BN EE NE OO PK GE
+U p_image%s		p_image.ads		1904c932 EE NE OO PK IL
+W p_pixel%s		p_pixel.adb		p_pixel.ali
 
-D p_image.ads		20160318205453 8e26687d p_image%s
-D p_image.adb		20160318205438 658e461b p_image%b
+D interfac.ads		20140406181359 69adb1b9 interfaces%s
+D p_image.ads		20160516115030 57b50729 p_image%s
+D p_image.adb		20160511204845 bb9f0faf p_image%b
+D p_pixel.ads		20160516115120 4eb1ce1b p_pixel%s
 D system.ads		20140406181354 f2f2d889 system%s
-X 1 p_image.ads
-2+7 T_pixel 4r65 8r59 10r67 12r85 2|2r59 11r67 16r85
-3k9*P_Image 2z7 18l5 18e12 2|1b14 30l5 30t12
-4A8*T_image(2+7)<integer><integer> 8r75 10r28 12r36 14r30 15r30 2|2r75 3r13
-. 11r28 16r36 21r30 26r30
-6X3*Falsche_Format 2|8r11
-8V12*init{4A8} 8>17 8>34 8>51 2|2b12 9l7 9t11
-8i17 largeur{natural} 2|2b17 3r24 5r8
-8i34 hauteur{natural} 2|2b34 3r37 5r30
-8*51 default{2+7} 2|2b51 3r69
-10V12*getPixel{2+7} 10>21 10>37 10>48 2|11b12 14l7 14t15
-10a21 image{4A8} 2|11b21 13r12
-10i37 x{natural} 2|11b37 13r18
-10i48 y{natural} 2|11b48 13r20
-12U13*setPixel 12=22 12>45 12>60 12>75 2|16b13 19l7 19t15
-12a22 image{4A8} 2|16b22 18m5
-12i45 x{natural} 2|16b45 18r11
-12i60 y{natural} 2|16b60 18r13
-12*75 pixel{2+7} 2|16b75 18r19
-14V12*getHauteur{natural} 14>23 2|21b12 24l7 24t17
-14a23 image{4A8} 2|21b23 23r12
-15V12*getLargeur{natural} 15>23 2|26b12 29l7 29t17
-15a23 image{4A8} 2|26b23 28r12
-X 2 p_image.adb
-3a5 image{1|4A8} 6r14
+X 2 p_image.ads
+4K9*p_image 24E8 36l5 36e12 3|1b14 102l5 102t12
+5P8*A_Image 7r23 8r23 8r96 10r28 11r29 13r31 15r26 18r27 20r101 21r35 35c8
+. 3|7r25 17r14 22r14 24r18 34r17 52r14 54r14 73r21 81r29 86r30 91r32 96r27
+7V12*get{4|2P8} 7>16 7>32 7>44 3|7b13 10l8 10t11
+7p16 image{5P8} 3|7b18 9r13
+7i32 x{natural} 3|7b34 9r34
+7i44 y{natural} 3|7b46 9r37
+8V12*get{5P8} 8>16 8>32 8>44 8>56 8>72 3|16b13 27l8 27t11
+8p16 image{5P8} 3|17b7
+8i32 x{natural} 3|18b7
+8i44 y{natural} 3|19b7
+8i56 width{natural} 3|20b7 24r34
+8i72 height{natural} 3|21b7 24r41
+10V12*getWidth{natural} 10>21 3|81b13 84l8 84t16
+10p21 image{5P8} 3|81b22 83r13
+11V12*getHeight{natural} 11>22 3|86b13 89l8 89t17
+11p22 image{5P8} 3|86b23 88r13
+13V12*getCategory{4|3E8} 13>24 3|91b13 94l8 94t19
+13p24 image{5P8} 3|91b25 93r13
+15V12*getMax{natural} 15>19 3|96b13 99l8 99t14
+15p19 image{5P8} 3|96b20 98r13
+18U13*set 18>17 18>36 18>51 18>66 3|33b14 41l8 41t11
+18p17 image{5P8} 3|34b7 40r6
+18i36 x{natural} 3|35b7 40r27
+18i51 y{natural} 3|36b7 40r30
+18p66 pixel{4|2P8} 3|37b7 40r36
+20V12*init{5P8} 20>17 20>33 20>50 20>75 3|24s29 47b13 66l8 66t12
+20i17 width{natural} 3|48b7 64r46
+20i33 height{natural} 3|49b7 64r58
+20e50 category{4|3E8} 3|50b7 56r28 57r9 59r12
+20i75 max{natural} 3|51b7 60r25 62r25
+21U13*destroy 21=21 21>44 3|72b14 78l8 78t15
+21p21 image{5P8} 3|73b7
+21b44 destroy_completly{boolean} 3|74b7
+24P8 A_String(string) 32r12
+25A8 T_Image_Array(4|2P8)<integer><integer> 26r32 3|64r29
+26P8 A_Image_Array(25A8) 29r14
+28R8 T_Image 34e13 35r26 3|54r29
+29p5*pixels{26P8} 3|9r23 40r16 64m15 83r23 88r23
+30e5*category{4|3E8} 3|56m16 93r23
+31i5*max{integer} 3|58m18 60m18 62m18 98r23
+32p5*name{24P8}
+33b5*compressed{boolean}
+X 3 p_image.adb
+24p6 new_image{2|5P8} 26r13
+54p6 image{2|5P8} 56r6 58r8 60r8 62r8 64r5 65r12
+X 4 p_pixel.ads
+1K9*P_Pixel 2|1w6 2r5 4|26e12
+2P8*A_Pixel 2|7r63 18r76 25r71 3|7r65 37r17
+3E8*T_Magic_Token 2|13r47 20r60 30r16 3|50r17 91r48 4|3e37
+3n26*P1{3E8} 3|24r49 57r20
+3n30*P2{3E8} 3|59r23
 
